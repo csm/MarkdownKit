@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "RegexKitLite.h"
 
 @interface MDKStringConverter : NSObject
 {
+    NSUInteger tabWidth;
 }
+
+@property (nonatomic, assign) NSUInteger tabWidth;
+
+- (NSString *) convertMarkdownStringToHTML: (NSString *) markdown;
 
 @end
