@@ -7,6 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		707C805711BAD6FB00E8A12E /* Amps and angle encoding.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802911BAD6FB00E8A12E /* Amps and angle encoding.html */; };
+		707C805811BAD6FB00E8A12E /* Amps and angle encoding.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C802A11BAD6FB00E8A12E /* Amps and angle encoding.text */; };
+		707C805911BAD6FB00E8A12E /* Auto links.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802B11BAD6FB00E8A12E /* Auto links.html */; };
+		707C805A11BAD6FB00E8A12E /* Auto links.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C802C11BAD6FB00E8A12E /* Auto links.text */; };
+		707C805B11BAD6FB00E8A12E /* Backslash escapes.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802D11BAD6FB00E8A12E /* Backslash escapes.html */; };
+		707C805C11BAD6FB00E8A12E /* Backslash escapes.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C802E11BAD6FB00E8A12E /* Backslash escapes.text */; };
+		707C805D11BAD6FB00E8A12E /* Blockquotes with code blocks.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802F11BAD6FB00E8A12E /* Blockquotes with code blocks.html */; };
+		707C805E11BAD6FB00E8A12E /* Blockquotes with code blocks.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803011BAD6FB00E8A12E /* Blockquotes with code blocks.text */; };
+		707C805F11BAD6FB00E8A12E /* Code Blocks.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803111BAD6FB00E8A12E /* Code Blocks.html */; };
+		707C806011BAD6FB00E8A12E /* Code Blocks.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803211BAD6FB00E8A12E /* Code Blocks.text */; };
+		707C806111BAD6FB00E8A12E /* Code Spans.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803311BAD6FB00E8A12E /* Code Spans.html */; };
+		707C806211BAD6FB00E8A12E /* Code Spans.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803411BAD6FB00E8A12E /* Code Spans.text */; };
+		707C806311BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803511BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.html */; };
+		707C806411BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803611BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.text */; };
+		707C806511BAD6FB00E8A12E /* Horizontal rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803711BAD6FB00E8A12E /* Horizontal rules.html */; };
+		707C806611BAD6FB00E8A12E /* Horizontal rules.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803811BAD6FB00E8A12E /* Horizontal rules.text */; };
+		707C806711BAD6FB00E8A12E /* Images.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803911BAD6FB00E8A12E /* Images.html */; };
+		707C806811BAD6FB00E8A12E /* Images.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803A11BAD6FB00E8A12E /* Images.text */; };
+		707C806911BAD6FB00E8A12E /* Inline HTML (Advanced).html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803B11BAD6FB00E8A12E /* Inline HTML (Advanced).html */; };
+		707C806A11BAD6FB00E8A12E /* Inline HTML (Advanced).text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803C11BAD6FB00E8A12E /* Inline HTML (Advanced).text */; };
+		707C806B11BAD6FB00E8A12E /* Inline HTML (Simple).html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803D11BAD6FB00E8A12E /* Inline HTML (Simple).html */; };
+		707C806C11BAD6FB00E8A12E /* Inline HTML (Simple).text in Resources */ = {isa = PBXBuildFile; fileRef = 707C803E11BAD6FB00E8A12E /* Inline HTML (Simple).text */; };
+		707C806D11BAD6FB00E8A12E /* Inline HTML comments.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C803F11BAD6FB00E8A12E /* Inline HTML comments.html */; };
+		707C806E11BAD6FB00E8A12E /* Inline HTML comments.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804011BAD6FB00E8A12E /* Inline HTML comments.text */; };
+		707C806F11BAD6FB00E8A12E /* Links, inline style.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804111BAD6FB00E8A12E /* Links, inline style.html */; };
+		707C807011BAD6FB00E8A12E /* Links, inline style.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804211BAD6FB00E8A12E /* Links, inline style.text */; };
+		707C807111BAD6FB00E8A12E /* Links, reference style.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804311BAD6FB00E8A12E /* Links, reference style.html */; };
+		707C807211BAD6FB00E8A12E /* Links, reference style.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804411BAD6FB00E8A12E /* Links, reference style.text */; };
+		707C807311BAD6FB00E8A12E /* Links, shortcut references.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804511BAD6FB00E8A12E /* Links, shortcut references.html */; };
+		707C807411BAD6FB00E8A12E /* Links, shortcut references.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804611BAD6FB00E8A12E /* Links, shortcut references.text */; };
+		707C807511BAD6FB00E8A12E /* Literal quotes in titles.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804711BAD6FB00E8A12E /* Literal quotes in titles.html */; };
+		707C807611BAD6FB00E8A12E /* Literal quotes in titles.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804811BAD6FB00E8A12E /* Literal quotes in titles.text */; };
+		707C807711BAD6FB00E8A12E /* Markdown Documentation - Basics.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804911BAD6FB00E8A12E /* Markdown Documentation - Basics.html */; };
+		707C807811BAD6FB00E8A12E /* Markdown Documentation - Basics.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804A11BAD6FB00E8A12E /* Markdown Documentation - Basics.text */; };
+		707C807911BAD6FB00E8A12E /* Markdown Documentation - Syntax.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804B11BAD6FB00E8A12E /* Markdown Documentation - Syntax.html */; };
+		707C807A11BAD6FB00E8A12E /* Markdown Documentation - Syntax.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804C11BAD6FB00E8A12E /* Markdown Documentation - Syntax.text */; };
+		707C807B11BAD6FB00E8A12E /* Nested blockquotes.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804D11BAD6FB00E8A12E /* Nested blockquotes.html */; };
+		707C807C11BAD6FB00E8A12E /* Nested blockquotes.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C804E11BAD6FB00E8A12E /* Nested blockquotes.text */; };
+		707C807D11BAD6FB00E8A12E /* Ordered and unordered lists.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C804F11BAD6FB00E8A12E /* Ordered and unordered lists.html */; };
+		707C807E11BAD6FB00E8A12E /* Ordered and unordered lists.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C805011BAD6FB00E8A12E /* Ordered and unordered lists.text */; };
+		707C807F11BAD6FB00E8A12E /* Strong and em together.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C805111BAD6FB00E8A12E /* Strong and em together.html */; };
+		707C808011BAD6FB00E8A12E /* Strong and em together.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C805211BAD6FB00E8A12E /* Strong and em together.text */; };
+		707C808111BAD6FB00E8A12E /* Tabs.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C805311BAD6FB00E8A12E /* Tabs.html */; };
+		707C808211BAD6FB00E8A12E /* Tabs.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C805411BAD6FB00E8A12E /* Tabs.text */; };
+		707C808311BAD6FB00E8A12E /* Tidyness.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C805511BAD6FB00E8A12E /* Tidyness.html */; };
+		707C808411BAD6FB00E8A12E /* Tidyness.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C805611BAD6FB00E8A12E /* Tidyness.text */; };
+		707C808711BAD71A00E8A12E /* MarkdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C808611BAD71A00E8A12E /* MarkdownTests.m */; };
+		707C809311BAD81600E8A12E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C809211BAD81600E8A12E /* main.m */; };
+		707C809711BAD85C00E8A12E /* TestSuite.octest in Resources */ = {isa = PBXBuildFile; fileRef = 707C801A11BAD3EF00E8A12E /* TestSuite.octest */; };
+		707C810911BADD0600E8A12E /* MDKStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */; };
+		707C813A11BADD0A00E8A12E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D28F7311B08EC800842B6F /* RegexKitLite.m */; };
 		708E9A9511A0B9DC00CEBC52 /* MDKStringConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 708E9A9311A0B9DC00CEBC52 /* MDKStringConverter.h */; };
 		708E9A9611A0B9DC00CEBC52 /* MDKStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */; };
 		70D28F7411B08EC800842B6F /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 70D28F7211B08EC800842B6F /* RegexKitLite.h */; };
@@ -15,7 +66,70 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		707C809C11BAD87E00E8A12E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707C801911BAD3EF00E8A12E /* TestSuite */;
+			remoteInfo = TestSuite;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		707C801A11BAD3EF00E8A12E /* TestSuite.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSuite.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		707C801B11BAD3EF00E8A12E /* TestSuite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestSuite-Info.plist"; sourceTree = "<group>"; };
+		707C802911BAD6FB00E8A12E /* Amps and angle encoding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Amps and angle encoding.html"; sourceTree = "<group>"; };
+		707C802A11BAD6FB00E8A12E /* Amps and angle encoding.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Amps and angle encoding.text"; sourceTree = "<group>"; };
+		707C802B11BAD6FB00E8A12E /* Auto links.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Auto links.html"; sourceTree = "<group>"; };
+		707C802C11BAD6FB00E8A12E /* Auto links.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Auto links.text"; sourceTree = "<group>"; };
+		707C802D11BAD6FB00E8A12E /* Backslash escapes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Backslash escapes.html"; sourceTree = "<group>"; };
+		707C802E11BAD6FB00E8A12E /* Backslash escapes.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Backslash escapes.text"; sourceTree = "<group>"; };
+		707C802F11BAD6FB00E8A12E /* Blockquotes with code blocks.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Blockquotes with code blocks.html"; sourceTree = "<group>"; };
+		707C803011BAD6FB00E8A12E /* Blockquotes with code blocks.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Blockquotes with code blocks.text"; sourceTree = "<group>"; };
+		707C803111BAD6FB00E8A12E /* Code Blocks.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Code Blocks.html"; sourceTree = "<group>"; };
+		707C803211BAD6FB00E8A12E /* Code Blocks.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Code Blocks.text"; sourceTree = "<group>"; };
+		707C803311BAD6FB00E8A12E /* Code Spans.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Code Spans.html"; sourceTree = "<group>"; };
+		707C803411BAD6FB00E8A12E /* Code Spans.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Code Spans.text"; sourceTree = "<group>"; };
+		707C803511BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Hard-wrapped paragraphs with list-like lines.html"; sourceTree = "<group>"; };
+		707C803611BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Hard-wrapped paragraphs with list-like lines.text"; sourceTree = "<group>"; };
+		707C803711BAD6FB00E8A12E /* Horizontal rules.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Horizontal rules.html"; sourceTree = "<group>"; };
+		707C803811BAD6FB00E8A12E /* Horizontal rules.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Horizontal rules.text"; sourceTree = "<group>"; };
+		707C803911BAD6FB00E8A12E /* Images.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Images.html; sourceTree = "<group>"; };
+		707C803A11BAD6FB00E8A12E /* Images.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Images.text; sourceTree = "<group>"; };
+		707C803B11BAD6FB00E8A12E /* Inline HTML (Advanced).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Inline HTML (Advanced).html"; sourceTree = "<group>"; };
+		707C803C11BAD6FB00E8A12E /* Inline HTML (Advanced).text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Inline HTML (Advanced).text"; sourceTree = "<group>"; };
+		707C803D11BAD6FB00E8A12E /* Inline HTML (Simple).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Inline HTML (Simple).html"; sourceTree = "<group>"; };
+		707C803E11BAD6FB00E8A12E /* Inline HTML (Simple).text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Inline HTML (Simple).text"; sourceTree = "<group>"; };
+		707C803F11BAD6FB00E8A12E /* Inline HTML comments.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Inline HTML comments.html"; sourceTree = "<group>"; };
+		707C804011BAD6FB00E8A12E /* Inline HTML comments.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Inline HTML comments.text"; sourceTree = "<group>"; };
+		707C804111BAD6FB00E8A12E /* Links, inline style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Links, inline style.html"; sourceTree = "<group>"; };
+		707C804211BAD6FB00E8A12E /* Links, inline style.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Links, inline style.text"; sourceTree = "<group>"; };
+		707C804311BAD6FB00E8A12E /* Links, reference style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Links, reference style.html"; sourceTree = "<group>"; };
+		707C804411BAD6FB00E8A12E /* Links, reference style.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Links, reference style.text"; sourceTree = "<group>"; };
+		707C804511BAD6FB00E8A12E /* Links, shortcut references.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Links, shortcut references.html"; sourceTree = "<group>"; };
+		707C804611BAD6FB00E8A12E /* Links, shortcut references.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Links, shortcut references.text"; sourceTree = "<group>"; };
+		707C804711BAD6FB00E8A12E /* Literal quotes in titles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Literal quotes in titles.html"; sourceTree = "<group>"; };
+		707C804811BAD6FB00E8A12E /* Literal quotes in titles.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Literal quotes in titles.text"; sourceTree = "<group>"; };
+		707C804911BAD6FB00E8A12E /* Markdown Documentation - Basics.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Markdown Documentation - Basics.html"; sourceTree = "<group>"; };
+		707C804A11BAD6FB00E8A12E /* Markdown Documentation - Basics.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Markdown Documentation - Basics.text"; sourceTree = "<group>"; };
+		707C804B11BAD6FB00E8A12E /* Markdown Documentation - Syntax.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Markdown Documentation - Syntax.html"; sourceTree = "<group>"; };
+		707C804C11BAD6FB00E8A12E /* Markdown Documentation - Syntax.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Markdown Documentation - Syntax.text"; sourceTree = "<group>"; };
+		707C804D11BAD6FB00E8A12E /* Nested blockquotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Nested blockquotes.html"; sourceTree = "<group>"; };
+		707C804E11BAD6FB00E8A12E /* Nested blockquotes.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Nested blockquotes.text"; sourceTree = "<group>"; };
+		707C804F11BAD6FB00E8A12E /* Ordered and unordered lists.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Ordered and unordered lists.html"; sourceTree = "<group>"; };
+		707C805011BAD6FB00E8A12E /* Ordered and unordered lists.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Ordered and unordered lists.text"; sourceTree = "<group>"; };
+		707C805111BAD6FB00E8A12E /* Strong and em together.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Strong and em together.html"; sourceTree = "<group>"; };
+		707C805211BAD6FB00E8A12E /* Strong and em together.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Strong and em together.text"; sourceTree = "<group>"; };
+		707C805311BAD6FB00E8A12E /* Tabs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Tabs.html; sourceTree = "<group>"; };
+		707C805411BAD6FB00E8A12E /* Tabs.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tabs.text; sourceTree = "<group>"; };
+		707C805511BAD6FB00E8A12E /* Tidyness.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Tidyness.html; sourceTree = "<group>"; };
+		707C805611BAD6FB00E8A12E /* Tidyness.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tidyness.text; sourceTree = "<group>"; };
+		707C808511BAD71A00E8A12E /* MarkdownTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownTests.h; sourceTree = "<group>"; };
+		707C808611BAD71A00E8A12E /* MarkdownTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTests.m; sourceTree = "<group>"; };
+		707C808C11BAD77100E8A12E /* MarkdownTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		707C808E11BAD77100E8A12E /* MarkdownTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarkdownTest-Info.plist"; sourceTree = "<group>"; };
+		707C809211BAD81600E8A12E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		708E9A9311A0B9DC00CEBC52 /* MDKStringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKStringConverter.h; sourceTree = "<group>"; };
 		708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKStringConverter.m; sourceTree = "<group>"; };
 		70D28F7111B08EC800842B6F /* License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
@@ -27,6 +141,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		707C801711BAD3EF00E8A12E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707C808A11BAD77100E8A12E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07C0554694100DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libMarkdownKit.a */,
+				707C801A11BAD3EF00E8A12E /* TestSuite.octest */,
+				707C808C11BAD77100E8A12E /* MarkdownTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -49,11 +179,15 @@
 		0867D691FE84028FC02AAC07 /* MarkdownKit */ = {
 			isa = PBXGroup;
 			children = (
+				707C802811BAD6E000E8A12E /* Test Data */,
+				707C802211BAD4E600E8A12E /* TestSuite */,
 				70D28F6F11B08E2E00842B6F /* RegexKitLite */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				707C801B11BAD3EF00E8A12E /* TestSuite-Info.plist */,
+				707C808E11BAD77100E8A12E /* MarkdownTest-Info.plist */,
 			);
 			name = MarkdownKit;
 			sourceTree = "<group>";
@@ -79,8 +213,71 @@
 			isa = PBXGroup;
 			children = (
 				AA747D9E0F9514B9006C5449 /* MarkdownKit_Prefix.pch */,
+				707C809211BAD81600E8A12E /* main.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		707C802211BAD4E600E8A12E /* TestSuite */ = {
+			isa = PBXGroup;
+			children = (
+				707C808511BAD71A00E8A12E /* MarkdownTests.h */,
+				707C808611BAD71A00E8A12E /* MarkdownTests.m */,
+			);
+			path = TestSuite;
+			sourceTree = "<group>";
+		};
+		707C802811BAD6E000E8A12E /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				707C802911BAD6FB00E8A12E /* Amps and angle encoding.html */,
+				707C802A11BAD6FB00E8A12E /* Amps and angle encoding.text */,
+				707C802B11BAD6FB00E8A12E /* Auto links.html */,
+				707C802C11BAD6FB00E8A12E /* Auto links.text */,
+				707C802D11BAD6FB00E8A12E /* Backslash escapes.html */,
+				707C802E11BAD6FB00E8A12E /* Backslash escapes.text */,
+				707C802F11BAD6FB00E8A12E /* Blockquotes with code blocks.html */,
+				707C803011BAD6FB00E8A12E /* Blockquotes with code blocks.text */,
+				707C803111BAD6FB00E8A12E /* Code Blocks.html */,
+				707C803211BAD6FB00E8A12E /* Code Blocks.text */,
+				707C803311BAD6FB00E8A12E /* Code Spans.html */,
+				707C803411BAD6FB00E8A12E /* Code Spans.text */,
+				707C803511BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.html */,
+				707C803611BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.text */,
+				707C803711BAD6FB00E8A12E /* Horizontal rules.html */,
+				707C803811BAD6FB00E8A12E /* Horizontal rules.text */,
+				707C803911BAD6FB00E8A12E /* Images.html */,
+				707C803A11BAD6FB00E8A12E /* Images.text */,
+				707C803B11BAD6FB00E8A12E /* Inline HTML (Advanced).html */,
+				707C803C11BAD6FB00E8A12E /* Inline HTML (Advanced).text */,
+				707C803D11BAD6FB00E8A12E /* Inline HTML (Simple).html */,
+				707C803E11BAD6FB00E8A12E /* Inline HTML (Simple).text */,
+				707C803F11BAD6FB00E8A12E /* Inline HTML comments.html */,
+				707C804011BAD6FB00E8A12E /* Inline HTML comments.text */,
+				707C804111BAD6FB00E8A12E /* Links, inline style.html */,
+				707C804211BAD6FB00E8A12E /* Links, inline style.text */,
+				707C804311BAD6FB00E8A12E /* Links, reference style.html */,
+				707C804411BAD6FB00E8A12E /* Links, reference style.text */,
+				707C804511BAD6FB00E8A12E /* Links, shortcut references.html */,
+				707C804611BAD6FB00E8A12E /* Links, shortcut references.text */,
+				707C804711BAD6FB00E8A12E /* Literal quotes in titles.html */,
+				707C804811BAD6FB00E8A12E /* Literal quotes in titles.text */,
+				707C804911BAD6FB00E8A12E /* Markdown Documentation - Basics.html */,
+				707C804A11BAD6FB00E8A12E /* Markdown Documentation - Basics.text */,
+				707C804B11BAD6FB00E8A12E /* Markdown Documentation - Syntax.html */,
+				707C804C11BAD6FB00E8A12E /* Markdown Documentation - Syntax.text */,
+				707C804D11BAD6FB00E8A12E /* Nested blockquotes.html */,
+				707C804E11BAD6FB00E8A12E /* Nested blockquotes.text */,
+				707C804F11BAD6FB00E8A12E /* Ordered and unordered lists.html */,
+				707C805011BAD6FB00E8A12E /* Ordered and unordered lists.text */,
+				707C805111BAD6FB00E8A12E /* Strong and em together.html */,
+				707C805211BAD6FB00E8A12E /* Strong and em together.text */,
+				707C805311BAD6FB00E8A12E /* Tabs.html */,
+				707C805411BAD6FB00E8A12E /* Tabs.text */,
+				707C805511BAD6FB00E8A12E /* Tidyness.html */,
+				707C805611BAD6FB00E8A12E /* Tidyness.text */,
+			);
+			path = "Test Data";
 			sourceTree = "<group>";
 		};
 		70D28F6F11B08E2E00842B6F /* RegexKitLite */ = {
@@ -109,6 +306,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		707C801911BAD3EF00E8A12E /* TestSuite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707C801E11BAD3F000E8A12E /* Build configuration list for PBXNativeTarget "TestSuite" */;
+			buildPhases = (
+				707C801511BAD3EF00E8A12E /* Resources */,
+				707C801611BAD3EF00E8A12E /* Sources */,
+				707C801711BAD3EF00E8A12E /* Frameworks */,
+				707C801811BAD3EF00E8A12E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestSuite;
+			productName = TestSuite;
+			productReference = 707C801A11BAD3EF00E8A12E /* TestSuite.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		707C808B11BAD77100E8A12E /* MarkdownTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707C809111BAD77200E8A12E /* Build configuration list for PBXNativeTarget "MarkdownTest" */;
+			buildPhases = (
+				707C808811BAD77100E8A12E /* Resources */,
+				707C808911BAD77100E8A12E /* Sources */,
+				707C808A11BAD77100E8A12E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				707C809D11BAD87E00E8A12E /* PBXTargetDependency */,
+			);
+			name = MarkdownTest;
+			productName = MarkdownTest;
+			productReference = 707C808C11BAD77100E8A12E /* MarkdownTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D2AAC07D0554694100DB518D /* MarkdownKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MarkdownKit" */;
@@ -140,11 +373,111 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* MarkdownKit */,
+				707C801911BAD3EF00E8A12E /* TestSuite */,
+				707C808B11BAD77100E8A12E /* MarkdownTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		707C801511BAD3EF00E8A12E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707C805711BAD6FB00E8A12E /* Amps and angle encoding.html in Resources */,
+				707C805811BAD6FB00E8A12E /* Amps and angle encoding.text in Resources */,
+				707C805911BAD6FB00E8A12E /* Auto links.html in Resources */,
+				707C805A11BAD6FB00E8A12E /* Auto links.text in Resources */,
+				707C805B11BAD6FB00E8A12E /* Backslash escapes.html in Resources */,
+				707C805C11BAD6FB00E8A12E /* Backslash escapes.text in Resources */,
+				707C805D11BAD6FB00E8A12E /* Blockquotes with code blocks.html in Resources */,
+				707C805E11BAD6FB00E8A12E /* Blockquotes with code blocks.text in Resources */,
+				707C805F11BAD6FB00E8A12E /* Code Blocks.html in Resources */,
+				707C806011BAD6FB00E8A12E /* Code Blocks.text in Resources */,
+				707C806111BAD6FB00E8A12E /* Code Spans.html in Resources */,
+				707C806211BAD6FB00E8A12E /* Code Spans.text in Resources */,
+				707C806311BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.html in Resources */,
+				707C806411BAD6FB00E8A12E /* Hard-wrapped paragraphs with list-like lines.text in Resources */,
+				707C806511BAD6FB00E8A12E /* Horizontal rules.html in Resources */,
+				707C806611BAD6FB00E8A12E /* Horizontal rules.text in Resources */,
+				707C806711BAD6FB00E8A12E /* Images.html in Resources */,
+				707C806811BAD6FB00E8A12E /* Images.text in Resources */,
+				707C806911BAD6FB00E8A12E /* Inline HTML (Advanced).html in Resources */,
+				707C806A11BAD6FB00E8A12E /* Inline HTML (Advanced).text in Resources */,
+				707C806B11BAD6FB00E8A12E /* Inline HTML (Simple).html in Resources */,
+				707C806C11BAD6FB00E8A12E /* Inline HTML (Simple).text in Resources */,
+				707C806D11BAD6FB00E8A12E /* Inline HTML comments.html in Resources */,
+				707C806E11BAD6FB00E8A12E /* Inline HTML comments.text in Resources */,
+				707C806F11BAD6FB00E8A12E /* Links, inline style.html in Resources */,
+				707C807011BAD6FB00E8A12E /* Links, inline style.text in Resources */,
+				707C807111BAD6FB00E8A12E /* Links, reference style.html in Resources */,
+				707C807211BAD6FB00E8A12E /* Links, reference style.text in Resources */,
+				707C807311BAD6FB00E8A12E /* Links, shortcut references.html in Resources */,
+				707C807411BAD6FB00E8A12E /* Links, shortcut references.text in Resources */,
+				707C807511BAD6FB00E8A12E /* Literal quotes in titles.html in Resources */,
+				707C807611BAD6FB00E8A12E /* Literal quotes in titles.text in Resources */,
+				707C807711BAD6FB00E8A12E /* Markdown Documentation - Basics.html in Resources */,
+				707C807811BAD6FB00E8A12E /* Markdown Documentation - Basics.text in Resources */,
+				707C807911BAD6FB00E8A12E /* Markdown Documentation - Syntax.html in Resources */,
+				707C807A11BAD6FB00E8A12E /* Markdown Documentation - Syntax.text in Resources */,
+				707C807B11BAD6FB00E8A12E /* Nested blockquotes.html in Resources */,
+				707C807C11BAD6FB00E8A12E /* Nested blockquotes.text in Resources */,
+				707C807D11BAD6FB00E8A12E /* Ordered and unordered lists.html in Resources */,
+				707C807E11BAD6FB00E8A12E /* Ordered and unordered lists.text in Resources */,
+				707C807F11BAD6FB00E8A12E /* Strong and em together.html in Resources */,
+				707C808011BAD6FB00E8A12E /* Strong and em together.text in Resources */,
+				707C808111BAD6FB00E8A12E /* Tabs.html in Resources */,
+				707C808211BAD6FB00E8A12E /* Tabs.text in Resources */,
+				707C808311BAD6FB00E8A12E /* Tidyness.html in Resources */,
+				707C808411BAD6FB00E8A12E /* Tidyness.text in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707C808811BAD77100E8A12E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707C809711BAD85C00E8A12E /* TestSuite.octest in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		707C801811BAD3EF00E8A12E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		707C801611BAD3EF00E8A12E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707C810911BADD0600E8A12E /* MDKStringConverter.m in Sources */,
+				707C813A11BADD0A00E8A12E /* RegexKitLite.m in Sources */,
+				707C808711BAD71A00E8A12E /* MarkdownTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707C808911BAD77100E8A12E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707C809311BAD81600E8A12E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +488,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		707C809D11BAD87E00E8A12E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 707C801911BAD3EF00E8A12E /* TestSuite */;
+			targetProxy = 707C809C11BAD87E00E8A12E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
@@ -200,7 +541,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphonesimulator3.1.3;
 			};
 			name = Debug;
 		};
@@ -214,6 +555,115 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
+			};
+			name = Release;
+		};
+		707C801C11BAD3F000E8A12E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "TestSuite-Info.plist";
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestSuite;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		707C801D11BAD3F000E8A12E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "TestSuite-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestSuite;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		707C808F11BAD77200E8A12E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "MarkdownTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MarkdownTest;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		707C809011BAD77200E8A12E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "MarkdownTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MarkdownTest;
+				SDKROOT = iphoneos3.2;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -234,6 +684,24 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707C801E11BAD3F000E8A12E /* Build configuration list for PBXNativeTarget "TestSuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707C801C11BAD3F000E8A12E /* Debug */,
+				707C801D11BAD3F000E8A12E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707C809111BAD77200E8A12E /* Build configuration list for PBXNativeTarget "MarkdownTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707C808F11BAD77200E8A12E /* Debug */,
+				707C809011BAD77200E8A12E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
