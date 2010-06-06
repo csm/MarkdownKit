@@ -13,6 +13,9 @@
 {
     NSUInteger tabWidth;
     NSString *emptyElementSuffix;
+    NSMutableDictionary *blockHash;
+    NSMutableDictionary *urlHash;
+    NSMutableDictionary *titlesHash;
 }
 
 /**
