@@ -27,10 +27,34 @@
 #import "MDKStringConverter.h"
 #import <CommonCrypto/CommonDigest.h>
 
+static NSString *escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash);
+
+static void
+menter(NSString *method, NSString *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    NSString *msg = [[[NSString alloc] initWithFormat: format arguments: args] autorelease];
+    NSLog(@"--> %@ %@", method, msg);
+    va_end(args);
+}
+
+static void
+mexit(NSString *method, NSString *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    NSString *msg = [[[NSString alloc] initWithFormat: format arguments: args] autorelease];
+    NSLog(@"<-- %@ %@", method, msg);
+    va_end(args);
+}
+
 @interface NSString(MD5)
 
 - (NSData *) dataWithMD5UsingEncoding: (NSStringEncoding) encoding;
 - (NSString *) stringWithMD5UsingEncoding: (NSStringEncoding) encoding;
+
+- (NSString *) join: (NSArray *) array;
 
 @end
 
@@ -55,6 +79,19 @@
             md5buf[12], md5buf[13], md5buf[14], md5buf[15]];
 }
 
+- (NSString *) join: (NSArray *) array
+{
+    NSMutableString *ret = [NSMutableString stringWithCapacity: 64];
+    int len = [array count];
+    for (int i = 0; i < len; i++)
+    {
+        [ret appendFormat: @"%@", [array objectAtIndex: i]];
+        if (i < len - 1)
+            [ret appendString: self];
+    }
+    return ret;
+}
+
 @end
 
 
@@ -74,11 +111,15 @@
 - (NSString *) doCodeSpans: (NSString *) text;
 - (NSString *) escapeSpecialCharsWithinTagAttributes: (NSString *) text;
 - (NSString *) encodeBackslashEscapes: (NSString *) text;
+- (NSString *) writeImageTag: (NSArray *) matches;
 - (NSString *) doImages: (NSString *) text;
 - (NSString *) doAnchors: (NSString *) text;
 - (NSString *) doAutoLinks: (NSString *) text;
 - (NSString *) encodeAmpsAndAngles: (NSString *) text;
 - (NSString *) doItalicsAndBold: (NSString *) text;
+- (NSString *) processListItems: (NSString *) text;
+- (NSString *) outdent: (NSString *) text;
+- (NSString *) encodeCode: (NSString *) text;
 
 @end
 
@@ -95,7 +136,7 @@ nspaces(NSUInteger n)
 
 - (NSString *) detabify: (NSString *) text
 {
-    NSLog(@"detabify: %@", [text substringToIndex: 32 < [text length] ? 32 : [text length]]);
+    menter(@"detabify", @"%@", text);
     NSMutableString *str = [NSMutableString stringWithString: text];
     int column = 0;
     for (int i = 0; i < [str length]; i++)
@@ -112,12 +153,23 @@ nspaces(NSUInteger n)
         else
             column++;
     }
+    mexit(@"detabify", @"%@", str);
     return str;
+}
+
+- (NSString *) outdent: (NSString *) text
+{
+    menter(@"outdent", @"%@", text);
+    NSString *regex = [NSString stringWithFormat: @"^(\t|[ ]{1,%d})", self.tabWidth];
+    text = [text stringByReplacingOccurrencesOfRegex: regex
+                                          withString: @""];
+    mexit(@"outdent", @"%@", text);
+    return text;
 }
 
 - (NSString *) hashHTMLBlocksForString: (NSString *) text
 {
-    NSLog(@"hashHTMLBlocksForString: %@", [text substringToIndex: 32<[text length] ? 32 : [text length]]);    
+    menter(@"hashHTMLBlocksForString", @"%@", text);
     text = [text stringByReplacingOccurrencesOfRegex: @"\\n"
                                           withString: @"\n\n"];
 
@@ -158,7 +210,10 @@ nspaces(NSUInteger n)
         if (r.location == NSNotFound)
             break;
         
-        NSString *hash = [[text substringWithRange: r] stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        NSString *str = [text substringWithRange: r];
+        NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        [blockHash setObject: str
+                      forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];        
     }
@@ -191,7 +246,10 @@ nspaces(NSUInteger n)
         if (r.location == NSNotFound)
             break;
         
-        NSString *hash = [[text substringWithRange: r] stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        NSString *str = [text substringWithRange: r];
+        NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        [blockHash setObject: str
+                      forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
     }
@@ -224,7 +282,10 @@ nspaces(NSUInteger n)
         if (r.location == NSNotFound)
             break;
 
-        NSString *hash = [[text substringWithRange: r] stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        NSString *str = [text substringWithRange: r];
+        NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        [blockHash setObject: str
+                      forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
     }
@@ -254,7 +315,10 @@ nspaces(NSUInteger n)
         if (r.location == NSNotFound)
             break;
         
-        NSString *hash = [[text substringWithRange: r] stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        NSString *str = [text substringWithRange: r];
+        NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        [blockHash setObject: str
+                      forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
     }
@@ -288,18 +352,23 @@ nspaces(NSUInteger n)
         if (r.location == NSNotFound)
             break;
 
-        NSString *hash = [[text substringWithRange: r] stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        NSString *str = [text substringWithRange: r];
+        NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
+        [blockHash setObject: str
+                      forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
     }
     
-    return [text stringByReplacingOccurrencesOfRegex: @"\\n\\n"
+    text = [text stringByReplacingOccurrencesOfRegex: @"\\n\\n"
                                           withString: @"\n"];
+    mexit(@"hashHTMLBlocksForString", @"%@", text);
+    return text;
 }
 
 - (NSString *) doHeaders: (NSString *) text
 {
-    NSLog(@"doHeaders: %@", [text substringToIndex: 32 < [text length] ? 32 : [text length]]);
+    menter(@"doHeaders", @"%@", text);
     NSMutableString *str = [NSMutableString stringWithString: text];
     // Setext style headers.
     //
@@ -393,12 +462,14 @@ nspaces(NSUInteger n)
         range.length = [str length] - range.location;
     }
     
+    mexit(@"doHeaders", @"%@", str);
+    
     return str;
 }
     
 - (NSString *) runBlockGamut: (NSString *) text
 {
-    NSLog(@"runBlockGamut: %@", [text substringToIndex: 32 < [text length] ? 32 : [text length]]);
+    menter(@"runBlockGamut", @"%@", text);
     
     // Horizontal rules:
     
@@ -418,6 +489,7 @@ nspaces(NSUInteger n)
     text = [self hashHTMLBlocksForString: text];
     text = [self formParagraphs: text];
     
+    mexit(@"runBlockGamut", @"%@", text);
     return text;
 }
 
@@ -443,24 +515,258 @@ nspaces(NSUInteger n)
 
 - (NSString *) stripLinkDefinitions: (NSString *) text
 {
-    NSLog(@"stripLinkDefinitions: %@", [text substringToIndex: 32 < [text length] ? 32 : [text length]]);
-    return text; // TODO
+    menter(@"stripLinkDefinitions", @"%@", text);
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"^[ ]{0,3}\\[(.+)\\]:[ \\t]*\\n?[ \\t]*<?(\\S+?)>?[ \\t]*\\n?[ \\t]*(?:(\\n*)[\"(](.+?)[\")][ \\t]*)?(?:\\n+|\\Z)"
+                               options: RKLMultiline
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"^[ ]{0,3}\\[(.+)\\]:[ \\t]*\\n?[ \\t]*<?(\\S+?)>?[ \\t]*\\n?[ \\t]*(?:(\\n*)[\"(](.+?)[\")][ \\t]*)?(?:\\n+|\\Z)"
+                                                          options: RKLMultiline
+                                                            range: range
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        
+        NSString *m1 = [[a objectAtIndex: 1] lowercaseString];
+        NSString *m2 = [a objectAtIndex: 2];
+        [urlHash setObject: [self encodeAmpsAndAngles: m2]
+                    forKey: m1];
+        NSString *m3 = [a objectAtIndex: 3];
+        NSString *m4 = [a objectAtIndex: 4];
+        
+        if ([m3 length] > 0)
+        {
+            NSString *rep = [m3 stringByAppendingString: m4];
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: rep];
+            range.location = r.location + [rep length];
+        }
+        else
+        {
+            if ([m4 length] > 0)
+            {
+                [urlHash setObject: [m4 stringByReplacingOccurrencesOfString: @"\""
+                                                                  withString: @"&quot"]
+                            forKey: m1];
+            }
+            
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: @""];
+            range.location = r.location;
+        }
+        range.length = [text length] - range.location;
+    }
+
+    mexit(@"stripLinkDefinitions", @"%@", text);
+    return text;
 }
 
 - (NSString *) unescapeSpecialChars: (NSString *) text;
 {
-    NSLog(@"unescapeSpecialChars: %@", [text substringToIndex: 32 < [text length] ? 32 : [text length]]);
-    return text; // TODO
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"~E(\\d+)E"
+                               inRange: range];
+        
+        if (r.location == NSNotFound)
+            break;
+        
+        NSRange r2 = [text rangeOfRegex: @"~E(\\d+)E"
+                                options: RKLNoOptions
+                                inRange: range
+                                capture: 1
+                                  error: NULL];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: [NSString stringWithFormat: @"%C", (unichar) [[text substringWithRange: r2] intValue]]];
+        range.location = r.location;
+        range.length = [text length] - range.location;
+    }
+    
+    return text;
+}
+
+- (NSString *) processListItems: (NSString *) text
+{
+    listLevel++;
+    text = [text stringByReplacingOccurrencesOfRegex: @"\\n{2,}\\z"
+                                          withString: @"\n"];
+    
+    NSString *regex = @"(\\n)?(^[ \\t]*)([*+-]|\\d+[.])[ \\t]+([^\\r]+?(\\n{1,2}))(?=\\n*(\\z|\\2([*+-]|\\d+[.])[ \\t]+))";
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: regex
+                               options: RKLMultiline
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: regex
+                                                          options: RKLMultiline
+                                                            range: range
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        
+        NSString *item = [a objectAtIndex: 4];
+        NSString *leadingLine = [a objectAtIndex: 1];
+        NSString *leadingSpace = [a objectAtIndex: 2];
+        
+        if ([leadingLine length] > 0 || [item rangeOfRegex: @"\\n{2,}"].location != NSNotFound)
+        {
+            item = [self runBlockGamut: [self outdent: item]];
+        }
+        else
+        {
+            item = [self doLists: [self outdent: item]];
+            item = [item stringByReplacingOccurrencesOfRegex: @"\\n$"
+                                                  withString: @""];
+            item = [self runSpanGamut: item];
+        }
+        
+        NSString *repl = [NSString stringWithFormat: @"<li>%@</li>\n",
+                          item];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: repl];
+        range.location = r.location + [repl length];
+        range.length = [text length] - range.location;
+    }
+    listLevel--;
+    return text;
 }
 
 - (NSString *) doLists: (NSString *) text
 {
+    menter(@"doLists", @"%@", text);
+    if (listLevel > 0)
+    {
+        // note: multiline
+        NSString *wholeList = @"^(([ ]{0,3}([*+-]|\\d+[.])[ \\t]+)[^\\r]+?(\\z|\\n{2,}(?=\\S)(?![ \\t]*(?:[*+-]|\\d+[.])[ \\t]+)))";
+        NSRange range = NSMakeRange(0, [text length]);
+        while (range.location < [text length])
+        {
+            NSRange r = [text rangeOfRegex: wholeList
+                                   options: RKLMultiline
+                                   inRange: range
+                                   capture: 0
+                                     error: NULL];
+            if (r.location == NSNotFound)
+                break;
+            
+            NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: wholeList
+                                                              options: RKLMultiline
+                                                                range: range
+                                                                error: NULL];
+            a = [a objectAtIndex: 0];
+            NSString *list = [[a objectAtIndex: 1] stringByReplacingOccurrencesOfRegex: @"\\n{2,}"
+                                                                            withString: @"\n\n\n"];
+            NSString *listType = ([[a objectAtIndex: 3] rangeOfRegex: @"[*+-]"].location != NSNotFound) ?
+            @"ul" : @"ol";
+            
+            NSString *result = [self processListItems: list];
+            result = [result stringByReplacingOccurrencesOfRegex: @"\\s+$"
+                                                      withString: @""];
+            result = [NSString stringWithFormat: @"<%@>%@</%@>\n", listType, result, listType];
+            
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: result];
+            range.location = r.location + [result length];
+            range.length = [text length] - range.location;
+        }
+    }
+    else
+    {
+        NSString *wholeList = @"(\\n\\n|^\\n?)(([ ]{0,3}([*+-]|\\d+[.])[ \\t]+)[^\\r]+?(\\z|\\n{2,}(?=\\S)(?![ \\t]*(?:[*+-]|\\d+[.])[ \\t]+)))";
+        NSRange range = NSMakeRange(0, [text length]);
+        while (range.location < [text length])
+        {
+            NSRange r = [text rangeOfRegex: wholeList
+                                   inRange: range];
+            if (r.location == NSNotFound)
+                break;
+            
+            NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: wholeList
+                                                                range: range];
+            a = [a objectAtIndex: 0];
+            NSString *runup = [a objectAtIndex: 1];
+            NSString *list = [[a objectAtIndex: 2] stringByReplacingOccurrencesOfRegex: @"\\n{2,}"
+                                                                            withString: @"\n\n\n"];
+            NSString *listType = ([[a objectAtIndex: 3] rangeOfRegex: @"[*+-]"].location != NSNotFound) ?
+            @"ul" : @"ol";
+
+            NSString *result = [self processListItems: list];
+            result = [NSString stringWithFormat: @"%@<%@>%@</%@>\n", runup,
+                      listType, result, listType];
+            
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: result];
+            range.location = r.location + [result length];
+            range.length = [text length] - range.location;
+        }
+    }
+
+    mexit(@"doLists", @"%@", text);
     return text;
 }
 
 - (NSString *) doCodeBlocks: (NSString *) text
 {
+    menter(@"doCodeBlocks", @"%@", text);
+    NSString *regex = [NSString stringWithFormat: @"(?:\\n\\n|\\A)((?:(?:[ ]{%d} | \\t).*\\n+)+)((?=^[ ]{0,%d}\\S)|\\Z)",
+                       self.tabWidth, self.tabWidth];
+    NSRange range = NSMakeRange(0, [text length]);
+    
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: regex
+                               options: RKLMultiline
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: regex
+                                                          options: RKLMultiline
+                                                            range: range
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        
+        NSString *codeblock = [a objectAtIndex: 1];
+        codeblock = [self encodeCode: codeblock];
+        codeblock = [self detabify: codeblock];
+        codeblock = [codeblock stringByReplacingOccurrencesOfRegex: @"\\A\\n+"
+                                                        withString: @""];
+        codeblock = [codeblock stringByReplacingOccurrencesOfRegex: @"\\n+\\Z"
+                                                        withString: @""];
+        
+        codeblock = [NSString stringWithFormat: @"<pre><code>%@</code></pre>",
+                     codeblock];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: codeblock];
+    }
+    mexit(@"doCodeBlocks", @"%@", text);
     return text;
+}
+
+- (NSString *) encodeCode: (NSString *) text
+{
+    text = [text stringByReplacingOccurrencesOfString: @"&"
+                                           withString: @"&amp;"];
+    text = [text stringByReplacingOccurrencesOfString: @"<"
+                                           withString: @"&lt;"];
+    text = [text stringByReplacingOccurrencesOfString: @">"
+                                           withString: @"&gt;"];
+    return escapeCharacters(text, @"\\*_{}[]\\", NO);
 }
 
 - (NSString *) doBlockQuotes: (NSString *) text
@@ -470,6 +776,59 @@ nspaces(NSUInteger n)
 
 - (NSString *) formParagraphs: (NSString *) text
 {
+    menter(@"formParagraphs", @"%@", text);
+    text = [text stringByReplacingOccurrencesOfRegex: @"\\A\\n+"
+                                          withString: @""];
+    text = [text stringByReplacingOccurrencesOfRegex: @"\\n+\\z"
+                                          withString: @""];
+    
+    NSArray *grafs = [text componentsSeparatedByRegex: @"\\n{2,}"];
+    NSLog(@"grafs: %@", grafs);
+    NSMutableArray *grafsOut = [NSMutableArray arrayWithCapacity: [grafs count]];
+    
+    for (NSString *s in grafs)
+    {
+        NSRange r = [s rangeOfRegex: @"\\d|[A-Fa-f]{16}"];
+        if (r.location != NSNotFound)
+        {
+            NSString *maybeHash = [s substringWithRange: r];
+            if ([blockHash objectForKey: maybeHash] != nil)
+            {
+                [grafsOut addObject: s];
+                continue;
+            }
+        }
+        if ([s isMatchedByRegex: @"\\S"])
+        {
+            s = [self runSpanGamut: s];
+            s = [s stringByReplacingOccurrencesOfRegex: @"^([ \\t]*)"
+                                            withString: @"<p>"];
+            s = [s stringByAppendingString: @"</p>"];
+            [grafsOut addObject: s];
+        }
+    }
+    
+    int len = [grafsOut count];
+    for (int i = 0; i < len; i++)
+    {
+        NSString *str = [grafsOut objectAtIndex: i];
+        NSRange r = [str rangeOfRegex: @"\\d|[A-Fa-f]{16}"];
+        if (r.location != NSNotFound)
+        {
+            NSString *hash = [str substringWithRange: r];
+            NSString *block = [blockHash objectForKey: hash];
+            if (block != nil)
+            {
+                str = [str stringByReplacingCharactersInRange: r
+                                                   withString: block];
+                [grafsOut replaceObjectAtIndex: i
+                                    withObject: str];
+            }
+        }
+    }
+    
+    text = [@"\n\n" join: grafsOut];
+    mexit(@"formParagraphs", @"%@", text);
     return text;
 }
 
@@ -483,18 +842,231 @@ nspaces(NSUInteger n)
     return text; // TODO
 }
 
+static NSString *
+escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash)
+{
+    NSString *regexString = [NSString stringWithFormat: @"([%@])",
+                             [charsToEscape stringByReplacingOccurrencesOfRegex: @"([\\[\\]\\\\])"
+                                                                     withString: @"\\$1"]];
+    if (afterBackslash)
+        regexString = [@"\\\\" stringByAppendingString: regexString];
+    
+    while (YES)
+    {
+        NSRange r = [text rangeOfRegex: regexString];
+        
+        if (r.location == NSNotFound)
+            break;
+        
+        unichar ch = [text characterAtIndex: r.location + r.length - 2];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: [NSString stringWithFormat: @"~E%dE", (int) ch]];
+    }
+    
+    return text;
+}
+
 - (NSString *) encodeBackslashEscapes: (NSString *) text
 {
+    text = escapeCharacters(text, @"\\", YES);
+    text = escapeCharacters(text, @"`*_{}[]()>#+-.!", YES);
     return text; // TODO
+}
+
+- (NSString *) writeImageTag: (NSArray *) matches
+{
+    NSString *wholeMatch = [matches objectAtIndex: 1];
+    NSString *altText = [matches objectAtIndex: 2];
+    NSString *linkId = [[matches objectAtIndex: 3] lowercaseString];
+    NSString *url = [matches objectAtIndex: 4];
+    NSString *title = [matches objectAtIndex: 7];
+    
+    if ([url length] == 0)
+    {
+        if ([linkId length] == 0)
+        {
+            linkId = [[altText lowercaseString] stringByReplacingOccurrencesOfRegex: @" ?\\n"
+                                                                         withString: @" "];
+        }
+        url = [@"#" stringByAppendingString: linkId];
+        
+        NSString *s = [urlHash objectForKey: linkId];
+        if (s != nil)
+        {
+            url = s;
+            NSString *ss = [titlesHash objectForKey: linkId];
+            if (ss != nil)
+                title = ss;
+        }
+        else
+        {
+            return wholeMatch;
+        }
+    }
+    
+    altText = [altText stringByReplacingOccurrencesOfString: @"\""
+                                                 withString: @"&quot;"];
+    url = escapeCharacters(url, @"*_", NO);
+    NSMutableString *result = [NSMutableString stringWithString: @"<img src=\""];
+    [result appendString: url];
+    [result appendString: @"\" alt=\""];
+    [result appendString: altText];
+    [result appendString: @"\""];
+    
+    title = [title stringByReplacingOccurrencesOfString: @"\""
+                                             withString: @"&quot;"];
+    title = escapeCharacters(title, @"*_", NO);
+    [result appendString: @" title=\""];
+    [result appendString: title];
+    [result appendString: @"\""];
+    [result appendString: self.emptyElementSuffix];
+    return result;
 }
 
 - (NSString *) doImages: (NSString *) text
 {
-    return text; // TODO
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"(!\\[(.*?)\\][ ]?(?:\\n[ ]*)?\\[(.*?)\\])()()()()"
+                               options: RKLNoOptions
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(!\\[(.*?)\\][ ]?(?:\\n[ ]*)?\\[(.*?)\\])()()()()"
+                                                            range: range];
+
+        NSString *tag = [self writeImageTag: [a objectAtIndex: 0]];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: tag];
+        
+        range.location = r.location + [tag length];
+        range.length = [text length] - range.location;
+    }
+
+    // text = text.replace(/(!\[(.*?)\]\s?\([ \t]*()<?(\S+?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,writeImageTag);
+    range = NSMakeRange(0, [text length]);
+    while (YES)
+    {
+        NSRange r = [text rangeOfRegex: @"(!\\[(.*?)\\]\\s?\\([ \\t]*()<?(\\S+?)>?[ \\t]*((['\"])(.*?)\6[ \\t]*)?\\))"
+                               options: RKLNoOptions
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(!\\[(.*?)\\]\\s?\\([ \\t]*()<?(\\S+?)>?[ \\t]*((['\"])(.*?)\6[ \\t]*)?\\))"
+                                                            range: range];        
+        a = [a objectAtIndex: 0];
+        
+        NSString *tag = [self writeImageTag: a];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: tag];
+        
+        range.location = r.location + [tag length];
+        range.length = [text length] - range.location;
+    }
+    
+    return text;
+}
+
+- (NSString *) writeAnchorTag: (NSArray *) groups
+{
+    NSString *wholeMatch = [groups objectAtIndex: 1];
+    NSString *linkText = [groups objectAtIndex: 2];
+    NSString *linkId = [[groups objectAtIndex: 3] lowercaseString];
+    NSString *url = [groups objectAtIndex: 4];
+    NSString *title = [groups objectAtIndex: 7];
+    
+    if (url == nil || [url length] == 0)
+    {
+        if (linkId == nil || [linkId length] == 0)
+        {
+            linkId = [[linkText lowercaseString] stringByReplacingOccurrencesOfRegex: @" +\\n"
+                                                                          withString: @" "];
+        }
+        url = [@"#" stringByAppendingString: linkId];
+    
+        NSString *linkValue = [urlHash objectForKey: linkId];
+        if (linkValue != nil)
+        {
+            url = linkValue;
+            NSString *s = [titlesHash objectForKey: linkId];
+            if (s != nil)
+                title = s;
+        }
+        else
+        {
+            if ([wholeMatch isMatchedByRegex: @"\\(\\s*\\)$"
+                                     options: RKLMultiline
+                                     inRange: NSMakeRange(0, [wholeMatch length])
+                                       error: NULL])
+            {
+                url = @"";
+            }
+            else
+            {
+                return wholeMatch;
+            }
+        }
+    }
+    
+    url = escapeCharacters(url, @"*_", NO);
+    NSMutableString *result = [NSMutableString stringWithString: @"<a href=\""];
+    [result appendString: url];
+    [result appendString: @"\""];
+    
+    if (title != nil && [title length] > 0)
+    {
+        title = [title stringByReplacingOccurrencesOfString: @"\"" withString: @"&quot;"];
+        title = escapeCharacters(title, @"*_", NO);
+        [result appendString: @" title=\""];
+        [result appendString: title];
+        [result appendString: @"\""];
+    }
+    
+    [result appendString: @">"];
+    [result appendString: linkText];
+    [result appendString: @"</a>"];
+    return result;
 }
 
 - (NSString *) doAnchors: (NSString *) text
 {
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\][ ]?(?:\\n[ ]*)?\\[(.*?)\\])()()()()"
+                               options: RKLNoOptions
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\][ ]?(?:\\n[ ]*)?\\[(.*?)\\])()()()()"
+                                                          options: RKLNoOptions
+                                                            range: range
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        
+        NSString *repl = [self writeAnchorTag: a];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: repl];
+        range.location = r.location + [repl length];
+        range.length = [text length] - range.location;
+    }
+    
+    range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\]\\([ \\t]*()<?(.*?)>?[ \\t]*((['\"])(.*?)\\6[ \\t]*)?\\))"
+    }
+    
     return text; // TODO
 }
 
@@ -523,50 +1095,60 @@ nspaces(NSUInteger n)
                                   error: NULL]; 
         
         NSString *addr = [text substringWithRange: r2];
-        NSMutableString *encmailto = [NSMutableString stringWithCapacity: 10];
-        NSMutableString *encaddr = [NSMutableString stringWithCapacity: [addr length]];
         
-        srandom(time(NULL));
-        
-        for (int i = 0; i < [@"mailto" length]; i++)
+        if (self.encodeEmailAddresses)
         {
-            unichar ch = [@"mailto" characterAtIndex: i];
-            int r = random();
-            if (r % 10 == 0)
-                [encmailto appendString: [NSString stringWithCharacters: &ch
-                                                               length: 1]];
-            else if (r % 2 == 0)
-                [encmailto appendFormat: @"&#%d", (int) ch];
-            else
-                [encmailto appendFormat: @"&#x%x", (int) ch];            
-        }
-        
-        for (int i = 0; i < [addr length]; i++)
-        {
-            unichar ch = [addr characterAtIndex: i];
-            int r = random();
-            if (ch == '@')
+            srandom(time(NULL));
+            
+            NSMutableString *encmailto = [NSMutableString stringWithCapacity: 10];
+            NSMutableString *encaddr = [NSMutableString stringWithCapacity: [addr length]];
+            for (int i = 0; i < [@"mailto" length]; i++)
             {
-                if (r % 2 == 0)
-                    [encaddr appendFormat: @"&#%d", (int) ch];
-                else
-                    [encaddr appendFormat: @"&#x%x", (int) ch];
-            }
-            else
-            {
+                unichar ch = [@"mailto" characterAtIndex: i];
+                int r = random();
                 if (r % 10 == 0)
-                    [encaddr appendString: [NSString stringWithCharacters: &ch
-                                                                   length: 1]];
+                    [encmailto appendString: [NSString stringWithCharacters: &ch
+                                                               length: 1]];
                 else if (r % 2 == 0)
-                    [encaddr appendFormat: @"&#%d", (int) ch];
+                    [encmailto appendFormat: @"&#%d", (int) ch];
                 else
-                    [encaddr appendFormat: @"&#x%x", (int) ch];
+                    [encmailto appendFormat: @"&#x%x", (int) ch];            
             }
-        }
         
-        text = [text stringByReplacingCharactersInRange: r
-                                             withString: [NSString stringWithFormat: @"<a href=\"%@:%@\">%@</a>",
-                                                          encmailto, encaddr, encaddr]];
+            for (int i = 0; i < [addr length]; i++)
+            {
+                unichar ch = [addr characterAtIndex: i];
+                int r = random();
+                if (ch == '@')
+                {
+                    if (r % 2 == 0)
+                        [encaddr appendFormat: @"&#%d", (int) ch];
+                    else
+                        [encaddr appendFormat: @"&#x%x", (int) ch];
+                }
+                else
+                {
+                    if (r % 10 == 0)
+                        [encaddr appendString: [NSString stringWithCharacters: &ch
+                                                                       length: 1]];
+                    else if (r % 2 == 0)
+                        [encaddr appendFormat: @"&#%d", (int) ch];
+                    else
+                        [encaddr appendFormat: @"&#x%x", (int) ch];
+                }
+            }
+        
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: [NSString stringWithFormat: @"<a href=\"%@:%@\">%@</a>",
+                                                              encmailto, encaddr, encaddr]];
+        }
+        else
+        {
+            text = [text stringByReplacingCharactersInRange: r
+                                                 withString: [NSString stringWithFormat: @"<a href=\"mailto:%@\">%@</a>",
+                                                              addr, addr]];
+        }
+
     }
 
     return text;
@@ -587,7 +1169,7 @@ nspaces(NSUInteger n)
                                           withString: @"<strong>$2</strong>"];
     text = [text stringByReplacingOccurrencesOfRegex: @"(\\*|_)(?=\\S)([^\\r]*?\\S)\\1"
                                           withString: @"<em>$2</em>"];
-    return text; // TODO
+    return text;
 }
 
 @end
@@ -595,6 +1177,7 @@ nspaces(NSUInteger n)
 
 @implementation MDKStringConverter
 
+@synthesize encodeEmailAddresses;
 @synthesize emptyElementSuffix;
 
 - (NSUInteger) tabWidth
@@ -616,6 +1199,7 @@ nspaces(NSUInteger n)
     {
         self.tabWidth = 4;
         self.emptyElementSuffix = @" />";
+        self.encodeEmailAddresses = YES;
         
         blockHash = [[NSMutableDictionary alloc] init];
         urlHash = [[NSMutableDictionary alloc] init];
@@ -624,11 +1208,21 @@ nspaces(NSUInteger n)
     return self;
 }
 
+- (void) dealloc
+{
+    [blockHash release];
+    [urlHash release];
+    [titlesHash release];
+    [super dealloc];
+}
+
 - (NSString *) convertMarkdownStringToHTML:(NSString *)markdown
 {
+    menter(@"convertMarkdownStringToHTML", @"%@", markdown);
     [blockHash removeAllObjects];
     [urlHash removeAllObjects];
     [titlesHash removeAllObjects];
+    listLevel = 0;
 
     NSMutableString *work = [[NSMutableString alloc] initWithString: markdown];
     [work replaceOccurrencesOfString: @"\r\n"
@@ -649,7 +1243,9 @@ nspaces(NSUInteger n)
     text = [self stripLinkDefinitions: text];
     text = [self runBlockGamut: text];
     text = [self unescapeSpecialChars: text];
-    return [text stringByAppendingString: @"\n"];
+    text = [text stringByAppendingString: @"\n"];
+    mexit(@"convertMarkdownStringToHTML", @"%@", text);
+    return text;
 }
 
 @end

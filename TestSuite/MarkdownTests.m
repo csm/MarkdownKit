@@ -45,6 +45,12 @@
                                                         error: &error];
             STAssertNotNil(s2, @"loading path; %@ -- %@", htmlPath, error);
             
+            if (![s1 isEqual: s2])
+            {
+                NSLog(@"failure -- output differs A>>%@<<A B>>%@<<B",
+                      s1, s2);
+            }
+            
             STAssertEquals(s1, s2, @"output differs for test %@", [contents objectAtIndex: i]);
         }
     }

@@ -11,12 +11,20 @@
 
 @interface MDKStringConverter : NSObject
 {
+    BOOL encodeEmailAddresses;
     NSUInteger tabWidth;
     NSString *emptyElementSuffix;
     NSMutableDictionary *blockHash;
     NSMutableDictionary *urlHash;
     NSMutableDictionary *titlesHash;
+    NSInteger listLevel;
 }
+
+/**
+ * In mailto: links, whether or not to encode email addresses with
+ * character entities.
+ */
+@property (nonatomic, assign) BOOL encodeEmailAddresses;
 
 /**
  * The number of spaces a tab represents. The default is 4.
