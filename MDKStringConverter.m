@@ -692,7 +692,9 @@ nspaces(NSUInteger n)
             NSString *result = [self processListItems: list];
             result = [result stringByReplacingOccurrencesOfRegex: @"\\s+$"
                                                       withString: @""];
-            result = [NSString stringWithFormat: @"<%@>%@</%@>\n", listType, result, listType];
+            // FIXME the newlines isn't what the original does; I'm not sure
+            // where these newlines are getting lost, though.
+            result = [NSString stringWithFormat: @"<%@>\n%@</%@>\n\n", listType, result, listType];
             
             text = [text stringByReplacingCharactersInRange: r
                                                  withString: result];
@@ -721,7 +723,7 @@ nspaces(NSUInteger n)
             @"ul" : @"ol";
 
             NSString *result = [self processListItems: list];
-            result = [NSString stringWithFormat: @"%@<%@>%@</%@>\n", runup,
+            result = [NSString stringWithFormat: @"%@<%@>\n%@</%@>\n\n", runup,
                       listType, result, listType];
             
             text = [text stringByReplacingCharactersInRange: r
@@ -766,7 +768,7 @@ nspaces(NSUInteger n)
         codeblock = [codeblock stringByReplacingOccurrencesOfRegex: @"\\n+\\Z"
                                                         withString: @""];
         
-        codeblock = [NSString stringWithFormat: @"\n\n<pre><code>%@\n</code></pre>\n\n",
+        codeblock = [NSString stringWithFormat: @"\n\n<pre><code>%@\n</code></pre>\n",
                      codeblock];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: codeblock];
