@@ -27,7 +27,11 @@
 #import "MDKStringConverter.h"
 #import <CommonCrypto/CommonDigest.h>
 
+//#define VERY_VERBOSE 1
+
 static NSString *escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash);
+
+#if VERY_VERBOSE
 
 static void
 menter(NSString *method, NSString *format, ...)
@@ -48,6 +52,11 @@ mexit(NSString *method, NSString *format, ...)
     NSLog(@"<-- %@ %@", method, msg);
     va_end(args);
 }
+
+#else
+#define menter(x,y,...)
+#define mexit(x,y,...)
+#endif
 
 @interface NSString(MD5)
 
@@ -530,7 +539,7 @@ nspaces(NSUInteger n)
         
         NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"^[ ]{0,3}\\[(.+)\\]:[ \\t]*\\n?[ \\t]*<?(\\S+?)>?[ \\t]*\\n?[ \\t]*(?:(\\n*)[\"(](.+?)[\")][ \\t]*)?(?:\\n+|\\Z)"
                                                           options: RKLMultiline
-                                                            range: range
+                                                            range: r
                                                             error: NULL];
         a = [a objectAtIndex: 0];
         
@@ -552,9 +561,9 @@ nspaces(NSUInteger n)
         {
             if ([m4 length] > 0)
             {
-                [urlHash setObject: [m4 stringByReplacingOccurrencesOfString: @"\""
-                                                                  withString: @"&quot"]
-                            forKey: m1];
+                [titlesHash setObject: [m4 stringByReplacingOccurrencesOfString: @"\""
+                                                                     withString: @"&quot"]
+                               forKey: m1];
             }
             
             text = [text stringByReplacingCharactersInRange: r
@@ -1050,7 +1059,7 @@ escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash)
         
         NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\][ ]?(?:\\n[ ]*)?\\[(.*?)\\])()()()()"
                                                           options: RKLNoOptions
-                                                            range: range
+                                                            range: r
                                                             error: NULL];
         a = [a objectAtIndex: 0];
         
@@ -1065,9 +1074,51 @@ escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash)
     while (range.location < [text length])
     {
         NSRange r = [text rangeOfRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\]\\([ \\t]*()<?(.*?)>?[ \\t]*((['\"])(.*?)\\6[ \\t]*)?\\))"
+                               options: RKLNoOptions
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(\\[((?:\\[[^\\]]*\\]|[^\\[\\]])*)\\]\\([ \\t]*()<?(.*?)>?[ \\t]*((['\"])(.*?)\\6[ \\t]*)?\\))"
+                                                          options: RKLNoOptions
+                                                            range: r
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        NSString *repl = [self writeAnchorTag: a];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: repl];
+        range.location = r.location + [repl length];
+        range.length = [text length] - range.location;
     }
     
-    return text; // TODO
+    range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: @"(\\[([^\\[\\]]+)\\])()()()()()"
+                               options: RKLNoOptions
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: @"(\\[([^\\[\\]]+)\\])()()()()()"
+                                                          options: RKLNoOptions
+                                                            range: r
+                                                            error: NULL];
+        a = [a objectAtIndex: 0];
+        NSString *repl = [self writeAnchorTag: a];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: repl];
+        range.location = r.location + [repl length];
+        range.length = [text length] - range.location;        
+    }
+    
+    mexit(@"doAnchors", @"%@", text);
+    return text;
 }
 
 - (NSString *) doAutoLinks: (NSString *) text
@@ -1244,6 +1295,10 @@ escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash)
     text = [self runBlockGamut: text];
     text = [self unescapeSpecialChars: text];
     text = [text stringByAppendingString: @"\n"];
+    
+    NSLog(@"urlHash: %@", urlHash);
+    NSLog(@"titlesHash: %@", titlesHash);
+    
     mexit(@"convertMarkdownStringToHTML", @"%@", text);
     return text;
 }
