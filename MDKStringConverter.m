@@ -524,7 +524,7 @@ nspaces(NSUInteger n)
     text = [self doItalicsAndBold: text];
     
     // Hard breaks.
-    text = [text stringByReplacingOccurrencesOfRegex: @"^  +"
+    text = [text stringByReplacingOccurrencesOfRegex: @" {2,}\\n"
                                           withString: [@"<br" stringByAppendingString: self.emptyElementSuffix]];
     
     return text;
@@ -738,7 +738,7 @@ nspaces(NSUInteger n)
 - (NSString *) doCodeBlocks: (NSString *) text
 {
     menter(@"doCodeBlocks", @"%@", text);
-    NSString *regex = [NSString stringWithFormat: @"(?:\\n\\n|\\A)((?:(?:[ ]{%d} | \\t).*\\n+)+)((?=^[ ]{0,%d}\\S)|\\Z)",
+    NSString *regex = [NSString stringWithFormat: @"(?:\\n\\n|\\A)((?:(?:[ ]{%d}|\\t).*\\n+)+)((?=^[ ]{0,%d}\\S)|\\Z)",
                        self.tabWidth, self.tabWidth];
     NSRange range = NSMakeRange(0, [text length]);
     
@@ -754,19 +754,19 @@ nspaces(NSUInteger n)
         
         NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: regex
                                                           options: RKLMultiline
-                                                            range: range
+                                                            range: r
                                                             error: NULL];
         a = [a objectAtIndex: 0];
         
         NSString *codeblock = [a objectAtIndex: 1];
-        codeblock = [self encodeCode: codeblock];
+        codeblock = [self encodeCode: [self outdent: codeblock]];
         codeblock = [self detabify: codeblock];
         codeblock = [codeblock stringByReplacingOccurrencesOfRegex: @"\\A\\n+"
                                                         withString: @""];
         codeblock = [codeblock stringByReplacingOccurrencesOfRegex: @"\\n+\\Z"
                                                         withString: @""];
         
-        codeblock = [NSString stringWithFormat: @"<pre><code>%@</code></pre>",
+        codeblock = [NSString stringWithFormat: @"\n\n<pre><code>%@\n</code></pre>\n\n",
                      codeblock];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: codeblock];
