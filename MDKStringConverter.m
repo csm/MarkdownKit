@@ -221,7 +221,9 @@ nspaces(NSUInteger n)
         
         NSString *str = [text substringWithRange: r];
         NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
-        [blockHash setObject: str
+        NSLog(@"hashing %@ -> %@", hash, str);
+        [blockHash setObject: [str stringByReplacingOccurrencesOfRegex: @"\\n\\n"
+                                                            withString: @"\n"]
                       forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];        
@@ -257,7 +259,9 @@ nspaces(NSUInteger n)
         
         NSString *str = [text substringWithRange: r];
         NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
-        [blockHash setObject: str
+        NSLog(@"hashing 1 %@ -> %@", hash, str);
+        [blockHash setObject: [str stringByReplacingOccurrencesOfRegex: @"\\n\\n"
+                                                            withString: @"\n"]
                       forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
@@ -293,7 +297,9 @@ nspaces(NSUInteger n)
 
         NSString *str = [text substringWithRange: r];
         NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
-        [blockHash setObject: str
+        NSLog(@"hashing 2 %@ -> %@", hash, str);
+        [blockHash setObject: [str stringByReplacingOccurrencesOfRegex: @"\\n\\n"
+                                                            withString: @"\n"]
                       forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
@@ -328,6 +334,7 @@ nspaces(NSUInteger n)
         NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
         [blockHash setObject: str
                       forKey: hash];
+        NSLog(@"hashing 3 %@ -> %@", hash, str);
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
     }
@@ -363,7 +370,8 @@ nspaces(NSUInteger n)
 
         NSString *str = [text substringWithRange: r];
         NSString *hash = [str stringWithMD5UsingEncoding: NSUTF8StringEncoding];
-        [blockHash setObject: str
+        [blockHash setObject: [str stringByReplacingOccurrencesOfRegex: @"\\n\\n"
+                                                            withString: @"\n"]
                       forKey: hash];
         text = [text stringByReplacingCharactersInRange: r
                                              withString: hash];
@@ -780,6 +788,41 @@ nspaces(NSUInteger n)
 
 - (NSString *) doBlockQuotes: (NSString *) text
 {
+    NSString *regex = @"((^[ \\t]*>[ \\t]?.+\\n(.+\\n)*\\n*)+)";
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange r = [text rangeOfRegex: regex
+                               options: RKLMultiline
+                               inRange: range
+                               capture: 0
+                                 error: NULL];
+        if (r.location == NSNotFound)
+            break;
+        
+        NSString *bq = [text substringWithRange: r];
+        bq = [bq stringByReplacingOccurrencesOfRegex: @"^[ \\t]*>[ \\t]?"
+                                          withString: @""
+                                             options: RKLMultiline
+                                               range: NSMakeRange(0, [bq length])
+                                               error: NULL];
+        bq = [bq stringByReplacingOccurrencesOfRegex: @"^[ \\t]+$"
+                                          withString: @""
+                                             options: RKLMultiline
+                                               range: NSMakeRange(0, [bq length])
+                                               error: NULL];
+        bq = [self runBlockGamut: bq];
+        //bq = [bq stringByReplacingOccurrencesOfRegex: @"^"
+        //                                  withString: @"  "];
+        // TODO
+        
+        bq = [NSString stringWithFormat: @"<blockquote>\n%@\n</blockquote>\n\n", bq];
+        text = [text stringByReplacingCharactersInRange: r
+                                             withString: bq];
+        range.location = r.location + [bq length];
+        range.length = [text length] - range.location;
+    }
+
     return text;
 }
 
@@ -797,12 +840,15 @@ nspaces(NSUInteger n)
     
     for (NSString *s in grafs)
     {
-        NSRange r = [s rangeOfRegex: @"\\d|[A-Fa-f]{16}"];
+        NSRange r = [s rangeOfRegex: @"[A-Fa-f0-9]{32}"];
         if (r.location != NSNotFound)
         {
             NSString *maybeHash = [s substringWithRange: r];
+            NSLog(@"maybe hash: %@", maybeHash);
             if ([blockHash objectForKey: maybeHash] != nil)
             {
+                s = [s stringByReplacingCharactersInRange: r
+                                               withString: [blockHash objectForKey: maybeHash]];
                 [grafsOut addObject: s];
                 continue;
             }
@@ -1298,6 +1344,7 @@ escapeCharacters(NSString *text, NSString *charsToEscape, BOOL afterBackslash)
     
     NSLog(@"urlHash: %@", urlHash);
     NSLog(@"titlesHash: %@", titlesHash);
+    NSLog(@"blockHash: %@", blockHash);
     
     mexit(@"convertMarkdownStringToHTML", @"%@", text);
     return text;
