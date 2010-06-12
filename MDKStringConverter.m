@@ -812,8 +812,8 @@ nspaces(NSUInteger n)
                                                range: NSMakeRange(0, [bq length])
                                                error: NULL];
         bq = [self runBlockGamut: bq];
-        //bq = [bq stringByReplacingOccurrencesOfRegex: @"^"
-        //                                  withString: @"  "];
+        bq = [bq stringByReplacingOccurrencesOfRegex: @"^"
+                                          withString: @"  "];
         // TODO
         
         bq = [NSString stringWithFormat: @"<blockquote>\n%@\n</blockquote>\n\n", bq];
@@ -840,18 +840,30 @@ nspaces(NSUInteger n)
     
     for (NSString *s in grafs)
     {
+        // FIXME -- the paragraph breaking is giving me two hashes separated
+        // by a newline. Did I mess something up, when hashing HTML?
+        // IF I did mess this up, the while loop is wrong -- it should do that
+        // once...
         NSRange r = [s rangeOfRegex: @"[A-Fa-f0-9]{32}"];
-        if (r.location != NSNotFound)
+        BOOL didReplace = NO;
+        while (r.location != NSNotFound)
         {
             NSString *maybeHash = [s substringWithRange: r];
             NSLog(@"maybe hash: %@", maybeHash);
-            if ([blockHash objectForKey: maybeHash] != nil)
+            NSString *value = [blockHash objectForKey: maybeHash];
+            if (value != nil)
             {
                 s = [s stringByReplacingCharactersInRange: r
-                                               withString: [blockHash objectForKey: maybeHash]];
-                [grafsOut addObject: s];
-                continue;
+                                               withString: value];
+                didReplace = YES;
             }
+            
+            r = [s rangeOfRegex: @"[A-Fa-f0-9]{32}"];
+        }
+        if (didReplace) // just did a hashed block.
+        {
+            [grafsOut addObject: s];
+            continue;
         }
         if ([s isMatchedByRegex: @"\\S"])
         {
