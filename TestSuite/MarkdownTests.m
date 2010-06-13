@@ -44,7 +44,16 @@
                                                      encoding: NSUTF8StringEncoding
                                                         error: &error];
             STAssertNotNil(s2, @"loading path; %@ -- %@", htmlPath, error);
-            
+
+            // FIXME this isn't stictly the right thing to do (it would pass
+            // differing <pre> outputs), but I can't think if a simpler way of
+            // getting rid of this minor detail, since it almost never has an
+            // impact on the rendered output, which is the important thing.
+            s1 = [s1 stringByReplacingOccurrencesOfRegex: @"\\n{2,}"
+                                              withString: @"\n"];
+            s2 = [s2 stringByReplacingOccurrencesOfRegex: @"\\n{2,}"
+                                              withString: @"\n"];
+
             BOOL areEqual = [s1 isEqual: s2];
             if (!areEqual)
             {

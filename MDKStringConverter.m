@@ -903,6 +903,44 @@ nspaces(NSUInteger n)
 
 - (NSString *) doCodeSpans: (NSString *) text
 {
+    //NSString *regex = @"(?<!\\\\)(`+)(.+?)(?<!`)\\1(?!`)";
+    NSString *regex = @"(^|[^\\\\])(`+)([^\\r]*?[^`])\\2(?!`)";
+    
+    NSRange range = NSMakeRange(0, [text length]);
+    while (range.location < [text length])
+    {
+        NSRange match = [text rangeOfRegex: regex
+                                   options: RKLDotAll
+                                   inRange: range
+                                   capture: 0
+                                     error: NULL];
+        if (match.location == NSNotFound)
+            break;
+        
+        NSArray *a = [text arrayOfCaptureComponentsMatchedByRegex: regex
+                                                          options: RKLDotAll
+                                                            range: match
+                                                            error: NULL];
+        //NSLog(@"rangeOfRegex: (%d, %d), capture components: %@",
+        //      match.location, match.length, a);
+        a = [a objectAtIndex: 0];
+        
+        NSString *c = [a objectAtIndex: 3];
+        c = [c stringByReplacingOccurrencesOfRegex: @"^[ \\t]*"
+                                        withString: @""];
+        c = [c stringByReplacingOccurrencesOfRegex: @"[ \\t]*$"
+                                        withString: @""];
+        c = [self encodeCode: c];
+        
+        c = [NSString stringWithFormat: @"%@<code>%@</code>",
+             [a objectAtIndex: 1], c];
+        text = [text stringByReplacingCharactersInRange: match
+                                             withString: c];
+        
+        range.location = match.location + [c length];
+        range.length = [text length] - range.location;
+    }
+
     return text; // TODO
 }
 
