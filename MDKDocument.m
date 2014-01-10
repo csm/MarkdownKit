@@ -6,38 +6,9 @@
 //
 //
 
-#import "MDKTextInput.h"
+#import "MDKDocument.h"
+#import "_MDKDocumentContext.h"
 #import "markdown.h"
-
-@interface _MDKTextInputContext : NSObject
-{
-    Document *iot;
-}
-
-- (id) initWithDocument: (Document *) _iot;
-
-@end
-
-@implementation _MDKTextInputContext
-
-- (id) initWithDocument: (Document *) _iot
-{
-    if (self = [super init])
-    {
-        iot = _iot;
-    }
-    return self;
-}
-
-- (void) dealloc
-{
-#if ! __has_feature(objc_arc)
-    [super dealloc];
-#endif
-    mkd_cleanup(iot);
-}
-
-@end
 
 static unsigned int _convert_flags(MDKFlags flags)
 {
@@ -67,7 +38,7 @@ static unsigned int _convert_flags(MDKFlags flags)
     return _flags;
 }
 
-@implementation MDKTextInput
+@implementation MDKDocument
 
 - (id) initWithContentsOfFile: (NSString *) filePath
                         flags: (MDKFlags) flags
@@ -77,11 +48,12 @@ static unsigned int _convert_flags(MDKFlags flags)
         FILE *f = fopen([filePath UTF8String], "r");
         if (f == NULL)
             return nil;
-        
+        unsigned int _flags = _convert_flags(flags);
         if ((flags & kMDKFlagGithubFlavored) == 0)
-            _context = [[_MDKTextInputContext alloc] initWithDocument: mkd_in(f, _convert_flags(flags))];
+            _context = [[_MDKDocumentContext alloc] initWithDocument: mkd_in(f, _flags)];
         else
-            _context = [[_MDKTextInputContext alloc] initWithDocument: gfm_in(f, _convert_flags(flags))];
+            _context = [[_MDKDocumentContext alloc] initWithDocument: gfm_in(f, _flags)];
+        mkd_compile(_context.context, _flags);
     }
     return self;
 }
@@ -91,10 +63,12 @@ static unsigned int _convert_flags(MDKFlags flags)
     if (self = [super init])
     {
         const char *utf8 = [contents UTF8String];
+        unsigned int _flags = _convert_flags(flags);
         if ((flags & kMDKFlagGithubFlavored) == 0)
-            _context = [[_MDKTextInputContext alloc] initWithDocument: mkd_string(utf8, strlen(utf8), _convert_flags(flags))];
+            _context = [[_MDKDocumentContext alloc] initWithDocument: mkd_string(utf8, (int) strlen(utf8), _flags)];
         else
-            _context = [[_MDKTextInputContext alloc] initWithDocument: gfm_string(utf8, strlen(utf8), _convert_flags(flags))];
+            _context = [[_MDKDocumentContext alloc] initWithDocument: gfm_string(utf8, (int) strlen(utf8), _flags)];
+        mkd_compile(_context.context, _flags);
     }
     return self;
 }

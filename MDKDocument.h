@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MDKFlags.h"
 
-@class _MDKTextInputContext;
+@class _MDKDocumentContext;
 
-@interface MDKTextInput : NSObject
+@interface MDKDocument : NSObject
 {
-    _MDKTextInputContext *_context;
+    _MDKDocumentContext *_context;
 }
 
 - (id) initWithContentsOfFile: (NSString *) filePath

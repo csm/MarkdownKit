@@ -7,3 +7,6 @@
 //
 
 #import "MDKFlags.h"
+#import "MDKDocument.h"
+#import "MDKConverter.h"
+#import "MDKMarkdown.h"
