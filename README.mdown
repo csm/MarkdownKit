@@ -1,3 +1,3 @@
-Objective-C [Markdown](http://daringfireball.net/projects/markdown/) implementation, meant for use in the iPhone OS SDK.
+Objective-C [Markdown](http://daringfireball.net/projects/markdown/) implementation.
 
-This implementation is written by directly replicating what the Perl version (and the JavaScript port, Showdown, since it's slightly more comprehensible than Perl) does. This is not very efficient, since the original version operates by doing string replacement via regular expressions instead of implementing an actual parser. This should be addressed in a later version.
+This is basically a wrapper around the [discount](https://github.com/Orc/discount) Markdown library.
