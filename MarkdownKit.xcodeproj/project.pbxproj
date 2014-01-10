@@ -7,6 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		704425F0187F5A78001022EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704425EF187F5A78001022EF /* Cocoa.framework */; };
+		704425FA187F5A79001022EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 704425F8187F5A79001022EF /* InfoPlist.strings */; };
+		70442605187F5A7A001022EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70442604187F5A7A001022EF /* XCTest.framework */; };
+		70442606187F5A7A001022EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704425EF187F5A78001022EF /* Cocoa.framework */; };
+		70442609187F5A7A001022EF /* MarkdownKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704425EE187F5A78001022EF /* MarkdownKit.framework */; };
+		7044260F187F5A7A001022EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7044260D187F5A7A001022EF /* InfoPlist.strings */; };
+		70442611187F5A7A001022EF /* MarkdownKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70442610187F5A7A001022EF /* MarkdownKitTests.m */; };
+		7044261D187F5A91001022EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		70442622187F5A91001022EF /* libMarkdownKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70442621187F5A91001022EF /* libMarkdownKit.h */; };
+		70442624187F5A91001022EF /* libMarkdownKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 70442623187F5A91001022EF /* libMarkdownKit.m */; };
+		7044262A187F5A92001022EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70442604187F5A7A001022EF /* XCTest.framework */; };
+		7044262B187F5A92001022EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		7044262D187F5A92001022EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7044262C187F5A92001022EF /* UIKit.framework */; };
+		70442630187F5A92001022EF /* liblibMarkdownKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7044261C187F5A91001022EF /* liblibMarkdownKit.a */; };
+		70442636187F5A92001022EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70442634187F5A92001022EF /* InfoPlist.strings */; };
+		70442638187F5A92001022EF /* libMarkdownKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70442637187F5A92001022EF /* libMarkdownKitTests.m */; };
+		70442668187F71D5001022EF /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265B187F71D5001022EF /* mkdio.c */; };
+		70442669187F71D5001022EF /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265B187F71D5001022EF /* mkdio.c */; };
+		7044266C187F71D5001022EF /* pgm_options.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265D187F71D5001022EF /* pgm_options.c */; };
+		7044266D187F71D5001022EF /* pgm_options.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265D187F71D5001022EF /* pgm_options.c */; };
+		7044266E187F71D5001022EF /* pgm_options.h in Headers */ = {isa = PBXBuildFile; fileRef = 7044265E187F71D5001022EF /* pgm_options.h */; };
+		7044266F187F71D5001022EF /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265F187F71D5001022EF /* resource.c */; };
+		70442670187F71D5001022EF /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044265F187F71D5001022EF /* resource.c */; };
+		70442671187F71D5001022EF /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442660187F71D5001022EF /* setup.c */; };
+		70442672187F71D5001022EF /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442660187F71D5001022EF /* setup.c */; };
+		70442673187F71D5001022EF /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442661187F71D5001022EF /* tags.c */; };
+		70442674187F71D5001022EF /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442661187F71D5001022EF /* tags.c */; };
+		70442675187F71D5001022EF /* tags.h in Headers */ = {isa = PBXBuildFile; fileRef = 70442662187F71D5001022EF /* tags.h */; };
+		70442676187F71D5001022EF /* toc.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442663187F71D5001022EF /* toc.c */; };
+		70442677187F71D5001022EF /* toc.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442663187F71D5001022EF /* toc.c */; };
+		70442678187F71D5001022EF /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442664187F71D5001022EF /* xml.c */; };
+		70442679187F71D5001022EF /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442664187F71D5001022EF /* xml.c */; };
+		7044267A187F71D5001022EF /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442665187F71D5001022EF /* xmlpage.c */; };
+		7044267B187F71D5001022EF /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442665187F71D5001022EF /* xmlpage.c */; };
+		7044267C187F71E2001022EF /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442640187F7195001022EF /* amalloc.c */; };
+		7044267D187F71E4001022EF /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442640187F7195001022EF /* amalloc.c */; };
+		7044267F187F71FF001022EF /* basename.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442642187F7195001022EF /* basename.c */; };
+		70442680187F7201001022EF /* basename.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442642187F7195001022EF /* basename.c */; };
+		70442681187F7210001022EF /* Csio.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442643187F7195001022EF /* Csio.c */; };
+		70442682187F7211001022EF /* Csio.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442643187F7195001022EF /* Csio.c */; };
+		70442683187F721A001022EF /* css.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442644187F7195001022EF /* css.c */; };
+		70442684187F721B001022EF /* css.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442644187F7195001022EF /* css.c */; };
+		70442685187F7248001022EF /* docheader.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442646187F7195001022EF /* docheader.c */; };
+		70442686187F7249001022EF /* docheader.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442646187F7195001022EF /* docheader.c */; };
+		70442687187F724F001022EF /* dumptree.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442647187F7195001022EF /* dumptree.c */; };
+		70442688187F7250001022EF /* dumptree.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442647187F7195001022EF /* dumptree.c */; };
+		70442689187F7255001022EF /* emmatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442648187F7195001022EF /* emmatch.c */; };
+		7044268A187F7256001022EF /* emmatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442648187F7195001022EF /* emmatch.c */; };
+		7044268B187F725B001022EF /* flags.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442649187F7195001022EF /* flags.c */; };
+		7044268C187F725C001022EF /* flags.c in Sources */ = {isa = PBXBuildFile; fileRef = 70442649187F7195001022EF /* flags.c */; };
+		7044268D187F7268001022EF /* generate.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264A187F7195001022EF /* generate.c */; };
+		7044268E187F7269001022EF /* generate.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264A187F7195001022EF /* generate.c */; };
+		7044268F187F7272001022EF /* github_flavoured.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264B187F7195001022EF /* github_flavoured.c */; };
+		70442690187F7272001022EF /* github_flavoured.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264B187F7195001022EF /* github_flavoured.c */; };
+		70442691187F7279001022EF /* html5.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264C187F7195001022EF /* html5.c */; };
+		70442692187F727A001022EF /* html5.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044264C187F7195001022EF /* html5.c */; };
+		70442695187F7E3D001022EF /* MDKFlags.h in Headers */ = {isa = PBXBuildFile; fileRef = 70442694187F7E3D001022EF /* MDKFlags.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70442696187F7E6F001022EF /* MarkdownKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 70442693187F794C001022EF /* MarkdownKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70442699187F7EBF001022EF /* MDKTextInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 70442697187F7EBF001022EF /* MDKTextInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7044269A187F7EBF001022EF /* MDKTextInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 70442698187F7EBF001022EF /* MDKTextInput.m */; };
+		7044269B187F7EBF001022EF /* MDKTextInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 70442698187F7EBF001022EF /* MDKTextInput.m */; };
+		704426A3187F83DD001022EF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 7044269D187F83DD001022EF /* config.h */; };
+		704426A4187F83DD001022EF /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044269E187F83DD001022EF /* markdown.c */; };
+		704426A5187F83DD001022EF /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 7044269E187F83DD001022EF /* markdown.c */; };
+		704426A6187F83DD001022EF /* markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 7044269F187F83DD001022EF /* markdown.h */; };
+		704426A7187F83DD001022EF /* mkdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 704426A0187F83DD001022EF /* mkdio.h */; };
+		704426AA187F83DD001022EF /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 704426A2187F83DD001022EF /* version.c */; settings = {COMPILER_FLAGS = "-DVERSION=\"\\\"2.1.7\\\"\""; }; };
+		704426AB187F83DD001022EF /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 704426A2187F83DD001022EF /* version.c */; };
+		704426AD187F90D8001022EF /* blocktags in Resources */ = {isa = PBXBuildFile; fileRef = 704426AC187F90D8001022EF /* blocktags */; };
 		707C805711BAD6FB00E8A12E /* Amps and angle encoding.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802911BAD6FB00E8A12E /* Amps and angle encoding.html */; };
 		707C805811BAD6FB00E8A12E /* Amps and angle encoding.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C802A11BAD6FB00E8A12E /* Amps and angle encoding.text */; };
 		707C805911BAD6FB00E8A12E /* Auto links.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C802B11BAD6FB00E8A12E /* Auto links.html */; };
@@ -54,19 +123,24 @@
 		707C808311BAD6FB00E8A12E /* Tidyness.html in Resources */ = {isa = PBXBuildFile; fileRef = 707C805511BAD6FB00E8A12E /* Tidyness.html */; };
 		707C808411BAD6FB00E8A12E /* Tidyness.text in Resources */ = {isa = PBXBuildFile; fileRef = 707C805611BAD6FB00E8A12E /* Tidyness.text */; };
 		707C808711BAD71A00E8A12E /* MarkdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C808611BAD71A00E8A12E /* MarkdownTests.m */; };
-		707C809311BAD81600E8A12E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C809211BAD81600E8A12E /* main.m */; };
 		707C809711BAD85C00E8A12E /* TestSuite.octest in Resources */ = {isa = PBXBuildFile; fileRef = 707C801A11BAD3EF00E8A12E /* TestSuite.octest */; };
-		707C810911BADD0600E8A12E /* MDKStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */; };
-		707C813A11BADD0A00E8A12E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D28F7311B08EC800842B6F /* RegexKitLite.m */; };
-		708E9A9511A0B9DC00CEBC52 /* MDKStringConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 708E9A9311A0B9DC00CEBC52 /* MDKStringConverter.h */; };
-		708E9A9611A0B9DC00CEBC52 /* MDKStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */; };
-		70D28F7411B08EC800842B6F /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 70D28F7211B08EC800842B6F /* RegexKitLite.h */; };
-		70D28F7511B08EC800842B6F /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D28F7311B08EC800842B6F /* RegexKitLite.m */; };
-		AA747D9F0F9514B9006C5449 /* MarkdownKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* MarkdownKit_Prefix.pch */; };
-		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		70442607187F5A7A001022EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 704425ED187F5A78001022EF;
+			remoteInfo = MarkdownKit;
+		};
+		7044262E187F5A92001022EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7044261B187F5A91001022EF;
+			remoteInfo = libMarkdownKit;
+		};
 		707C809C11BAD87E00E8A12E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -76,7 +150,75 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7044261A187F5A91001022EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				70442622187F5A91001022EF /* libMarkdownKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		704425EE187F5A78001022EF /* MarkdownKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarkdownKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		704425EF187F5A78001022EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		704425F2187F5A79001022EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		704425F3187F5A79001022EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		704425F4187F5A79001022EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		704425F7187F5A79001022EF /* MarkdownKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarkdownKit-Info.plist"; sourceTree = "<group>"; };
+		704425F9187F5A79001022EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		704425FB187F5A79001022EF /* MarkdownKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarkdownKit-Prefix.pch"; sourceTree = "<group>"; };
+		70442603187F5A79001022EF /* MarkdownKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70442604187F5A7A001022EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7044260C187F5A7A001022EF /* MarkdownKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarkdownKitTests-Info.plist"; sourceTree = "<group>"; };
+		7044260E187F5A7A001022EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70442610187F5A7A001022EF /* MarkdownKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkdownKitTests.m; sourceTree = "<group>"; };
+		7044261C187F5A91001022EF /* liblibMarkdownKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibMarkdownKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		70442620187F5A91001022EF /* libMarkdownKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libMarkdownKit-Prefix.pch"; sourceTree = "<group>"; };
+		70442621187F5A91001022EF /* libMarkdownKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libMarkdownKit.h; sourceTree = "<group>"; };
+		70442623187F5A91001022EF /* libMarkdownKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libMarkdownKit.m; sourceTree = "<group>"; };
+		70442629187F5A92001022EF /* libMarkdownKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libMarkdownKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7044262C187F5A92001022EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		70442633187F5A92001022EF /* libMarkdownKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libMarkdownKitTests-Info.plist"; sourceTree = "<group>"; };
+		70442635187F5A92001022EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70442637187F5A92001022EF /* libMarkdownKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libMarkdownKitTests.m; sourceTree = "<group>"; };
+		70442640187F7195001022EF /* amalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = amalloc.c; path = discount/amalloc.c; sourceTree = "<group>"; };
+		70442641187F7195001022EF /* amalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amalloc.h; path = discount/amalloc.h; sourceTree = "<group>"; };
+		70442642187F7195001022EF /* basename.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = basename.c; path = discount/basename.c; sourceTree = "<group>"; };
+		70442643187F7195001022EF /* Csio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Csio.c; path = discount/Csio.c; sourceTree = "<group>"; };
+		70442644187F7195001022EF /* css.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = css.c; path = discount/css.c; sourceTree = "<group>"; };
+		70442645187F7195001022EF /* cstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cstring.h; path = discount/cstring.h; sourceTree = "<group>"; };
+		70442646187F7195001022EF /* docheader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = docheader.c; path = discount/docheader.c; sourceTree = "<group>"; };
+		70442647187F7195001022EF /* dumptree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dumptree.c; path = discount/dumptree.c; sourceTree = "<group>"; };
+		70442648187F7195001022EF /* emmatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = emmatch.c; path = discount/emmatch.c; sourceTree = "<group>"; };
+		70442649187F7195001022EF /* flags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = flags.c; path = discount/flags.c; sourceTree = "<group>"; };
+		7044264A187F7195001022EF /* generate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = generate.c; path = discount/generate.c; sourceTree = "<group>"; };
+		7044264B187F7195001022EF /* github_flavoured.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = github_flavoured.c; path = discount/github_flavoured.c; sourceTree = "<group>"; };
+		7044264C187F7195001022EF /* html5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = html5.c; path = discount/html5.c; sourceTree = "<group>"; };
+		7044265B187F71D5001022EF /* mkdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mkdio.c; path = discount/mkdio.c; sourceTree = "<group>"; };
+		7044265D187F71D5001022EF /* pgm_options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pgm_options.c; path = discount/pgm_options.c; sourceTree = "<group>"; };
+		7044265E187F71D5001022EF /* pgm_options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgm_options.h; path = discount/pgm_options.h; sourceTree = "<group>"; };
+		7044265F187F71D5001022EF /* resource.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = resource.c; path = discount/resource.c; sourceTree = "<group>"; };
+		70442660187F71D5001022EF /* setup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = setup.c; path = discount/setup.c; sourceTree = "<group>"; };
+		70442661187F71D5001022EF /* tags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tags.c; path = discount/tags.c; sourceTree = "<group>"; };
+		70442662187F71D5001022EF /* tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tags.h; path = discount/tags.h; sourceTree = "<group>"; };
+		70442663187F71D5001022EF /* toc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = toc.c; path = discount/toc.c; sourceTree = "<group>"; };
+		70442664187F71D5001022EF /* xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xml.c; path = discount/xml.c; sourceTree = "<group>"; };
+		70442665187F71D5001022EF /* xmlpage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xmlpage.c; path = discount/xmlpage.c; sourceTree = "<group>"; };
+		70442693187F794C001022EF /* MarkdownKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkdownKit.h; sourceTree = "<group>"; };
+		70442694187F7E3D001022EF /* MDKFlags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKFlags.h; sourceTree = "<group>"; };
+		70442697187F7EBF001022EF /* MDKTextInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTextInput.h; sourceTree = "<group>"; };
+		70442698187F7EBF001022EF /* MDKTextInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTextInput.m; sourceTree = "<group>"; };
+		7044269D187F83DD001022EF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = discount/config.h; sourceTree = "<group>"; };
+		7044269E187F83DD001022EF /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = markdown.c; path = discount/markdown.c; sourceTree = "<group>"; };
+		7044269F187F83DD001022EF /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = markdown.h; path = discount/markdown.h; sourceTree = "<group>"; };
+		704426A0187F83DD001022EF /* mkdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mkdio.h; path = discount/mkdio.h; sourceTree = "<group>"; };
+		704426A2187F83DD001022EF /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = version.c; path = discount/version.c; sourceTree = "<group>"; };
+		704426AC187F90D8001022EF /* blocktags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = blocktags; path = discount/blocktags; sourceTree = "<group>"; };
 		707C801A11BAD3EF00E8A12E /* TestSuite.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSuite.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		707C801B11BAD3EF00E8A12E /* TestSuite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestSuite-Info.plist"; sourceTree = "<group>"; };
 		707C802911BAD6FB00E8A12E /* Amps and angle encoding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Amps and angle encoding.html"; sourceTree = "<group>"; };
@@ -129,18 +271,47 @@
 		707C808611BAD71A00E8A12E /* MarkdownTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTests.m; sourceTree = "<group>"; };
 		707C808C11BAD77100E8A12E /* MarkdownTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		707C808E11BAD77100E8A12E /* MarkdownTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarkdownTest-Info.plist"; sourceTree = "<group>"; };
-		707C809211BAD81600E8A12E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		708E9A9311A0B9DC00CEBC52 /* MDKStringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKStringConverter.h; sourceTree = "<group>"; };
-		708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKStringConverter.m; sourceTree = "<group>"; };
-		70D28F7111B08EC800842B6F /* License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
-		70D28F7211B08EC800842B6F /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		70D28F7311B08EC800842B6F /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* MarkdownKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* libMarkdownKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarkdownKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		704425EA187F5A78001022EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704425F0187F5A78001022EF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442600187F5A79001022EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442606187F5A7A001022EF /* Cocoa.framework in Frameworks */,
+				70442605187F5A7A001022EF /* XCTest.framework in Frameworks */,
+				70442609187F5A7A001022EF /* MarkdownKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442619187F5A91001022EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7044261D187F5A91001022EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442626187F5A92001022EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7044262A187F5A92001022EF /* XCTest.framework in Frameworks */,
+				7044262D187F5A92001022EF /* UIKit.framework in Frameworks */,
+				7044262B187F5A92001022EF /* Foundation.framework in Frameworks */,
+				70442630187F5A92001022EF /* liblibMarkdownKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		707C801711BAD3EF00E8A12E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,23 +326,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2AAC07C0554694100DB518D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libMarkdownKit.a */,
 				707C801A11BAD3EF00E8A12E /* TestSuite.octest */,
 				707C808C11BAD77100E8A12E /* MarkdownTest.app */,
+				704425EE187F5A78001022EF /* MarkdownKit.framework */,
+				70442603187F5A79001022EF /* MarkdownKitTests.xctest */,
+				7044261C187F5A91001022EF /* liblibMarkdownKit.a */,
+				70442629187F5A92001022EF /* libMarkdownKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,11 +345,14 @@
 		0867D691FE84028FC02AAC07 /* MarkdownKit */ = {
 			isa = PBXGroup;
 			children = (
+				7044263F187F7178001022EF /* discount */,
 				707C802811BAD6E000E8A12E /* Test Data */,
 				707C802211BAD4E600E8A12E /* TestSuite */,
-				70D28F6F11B08E2E00842B6F /* RegexKitLite */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
-				32C88DFF0371C24200C91783 /* Other Sources */,
+				704425F5187F5A79001022EF /* MarkdownKit */,
+				7044260A187F5A7A001022EF /* MarkdownKitTests */,
+				7044261E187F5A91001022EF /* libMarkdownKit */,
+				70442631187F5A92001022EF /* libMarkdownKitTests */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				707C801B11BAD3EF00E8A12E /* TestSuite-Info.plist */,
@@ -196,6 +365,10 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				704425EF187F5A78001022EF /* Cocoa.framework */,
+				70442604187F5A7A001022EF /* XCTest.framework */,
+				7044262C187F5A92001022EF /* UIKit.framework */,
+				704425F1187F5A79001022EF /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,19 +376,130 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				708E9A9311A0B9DC00CEBC52 /* MDKStringConverter.h */,
-				708E9A9411A0B9DC00CEBC52 /* MDKStringConverter.m */,
+				70442693187F794C001022EF /* MarkdownKit.h */,
+				70442694187F7E3D001022EF /* MDKFlags.h */,
+				70442697187F7EBF001022EF /* MDKTextInput.h */,
+				70442698187F7EBF001022EF /* MDKTextInput.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		32C88DFF0371C24200C91783 /* Other Sources */ = {
+		704425F1187F5A79001022EF /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* MarkdownKit_Prefix.pch */,
-				707C809211BAD81600E8A12E /* main.m */,
+				704425F2187F5A79001022EF /* Foundation.framework */,
+				704425F3187F5A79001022EF /* CoreData.framework */,
+				704425F4187F5A79001022EF /* AppKit.framework */,
 			);
-			name = "Other Sources";
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		704425F5187F5A79001022EF /* MarkdownKit */ = {
+			isa = PBXGroup;
+			children = (
+				704425F6187F5A79001022EF /* Supporting Files */,
+			);
+			path = MarkdownKit;
+			sourceTree = "<group>";
+		};
+		704425F6187F5A79001022EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				704425F7187F5A79001022EF /* MarkdownKit-Info.plist */,
+				704425F8187F5A79001022EF /* InfoPlist.strings */,
+				704425FB187F5A79001022EF /* MarkdownKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7044260A187F5A7A001022EF /* MarkdownKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				70442610187F5A7A001022EF /* MarkdownKitTests.m */,
+				7044260B187F5A7A001022EF /* Supporting Files */,
+			);
+			path = MarkdownKitTests;
+			sourceTree = "<group>";
+		};
+		7044260B187F5A7A001022EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7044260C187F5A7A001022EF /* MarkdownKitTests-Info.plist */,
+				7044260D187F5A7A001022EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7044261E187F5A91001022EF /* libMarkdownKit */ = {
+			isa = PBXGroup;
+			children = (
+				70442621187F5A91001022EF /* libMarkdownKit.h */,
+				70442623187F5A91001022EF /* libMarkdownKit.m */,
+				7044261F187F5A91001022EF /* Supporting Files */,
+			);
+			path = libMarkdownKit;
+			sourceTree = "<group>";
+		};
+		7044261F187F5A91001022EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70442620187F5A91001022EF /* libMarkdownKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70442631187F5A92001022EF /* libMarkdownKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				70442637187F5A92001022EF /* libMarkdownKitTests.m */,
+				70442632187F5A92001022EF /* Supporting Files */,
+			);
+			path = libMarkdownKitTests;
+			sourceTree = "<group>";
+		};
+		70442632187F5A92001022EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70442633187F5A92001022EF /* libMarkdownKitTests-Info.plist */,
+				70442634187F5A92001022EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7044263F187F7178001022EF /* discount */ = {
+			isa = PBXGroup;
+			children = (
+				704426AC187F90D8001022EF /* blocktags */,
+				7044269D187F83DD001022EF /* config.h */,
+				7044269E187F83DD001022EF /* markdown.c */,
+				7044269F187F83DD001022EF /* markdown.h */,
+				704426A0187F83DD001022EF /* mkdio.h */,
+				704426A2187F83DD001022EF /* version.c */,
+				7044265B187F71D5001022EF /* mkdio.c */,
+				7044265D187F71D5001022EF /* pgm_options.c */,
+				7044265E187F71D5001022EF /* pgm_options.h */,
+				7044265F187F71D5001022EF /* resource.c */,
+				70442660187F71D5001022EF /* setup.c */,
+				70442661187F71D5001022EF /* tags.c */,
+				70442662187F71D5001022EF /* tags.h */,
+				70442663187F71D5001022EF /* toc.c */,
+				70442664187F71D5001022EF /* xml.c */,
+				70442665187F71D5001022EF /* xmlpage.c */,
+				70442640187F7195001022EF /* amalloc.c */,
+				70442641187F7195001022EF /* amalloc.h */,
+				70442642187F7195001022EF /* basename.c */,
+				70442643187F7195001022EF /* Csio.c */,
+				70442644187F7195001022EF /* css.c */,
+				70442645187F7195001022EF /* cstring.h */,
+				70442646187F7195001022EF /* docheader.c */,
+				70442647187F7195001022EF /* dumptree.c */,
+				70442648187F7195001022EF /* emmatch.c */,
+				70442649187F7195001022EF /* flags.c */,
+				7044264A187F7195001022EF /* generate.c */,
+				7044264B187F7195001022EF /* github_flavoured.c */,
+				7044264C187F7195001022EF /* html5.c */,
+			);
+			name = discount;
 			sourceTree = "<group>";
 		};
 		707C802211BAD4E600E8A12E /* TestSuite */ = {
@@ -280,32 +564,99 @@
 			path = "Test Data";
 			sourceTree = "<group>";
 		};
-		70D28F6F11B08E2E00842B6F /* RegexKitLite */ = {
-			isa = PBXGroup;
-			children = (
-				70D28F7111B08EC800842B6F /* License.rtf */,
-				70D28F7211B08EC800842B6F /* RegexKitLite.h */,
-				70D28F7311B08EC800842B6F /* RegexKitLite.m */,
-			);
-			path = RegexKitLite;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D2AAC07A0554694100DB518D /* Headers */ = {
+		704425EB187F5A78001022EF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* MarkdownKit_Prefix.pch in Headers */,
-				708E9A9511A0B9DC00CEBC52 /* MDKStringConverter.h in Headers */,
-				70D28F7411B08EC800842B6F /* RegexKitLite.h in Headers */,
+				70442695187F7E3D001022EF /* MDKFlags.h in Headers */,
+				704426A7187F83DD001022EF /* mkdio.h in Headers */,
+				70442699187F7EBF001022EF /* MDKTextInput.h in Headers */,
+				7044266E187F71D5001022EF /* pgm_options.h in Headers */,
+				704426A3187F83DD001022EF /* config.h in Headers */,
+				70442696187F7E6F001022EF /* MarkdownKit.h in Headers */,
+				704426A6187F83DD001022EF /* markdown.h in Headers */,
+				70442675187F71D5001022EF /* tags.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		704425ED187F5A78001022EF /* MarkdownKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70442612187F5A7A001022EF /* Build configuration list for PBXNativeTarget "MarkdownKit" */;
+			buildPhases = (
+				7044269C187F839A001022EF /* ShellScript */,
+				704425E9187F5A78001022EF /* Sources */,
+				704425EA187F5A78001022EF /* Frameworks */,
+				704425EB187F5A78001022EF /* Headers */,
+				704425EC187F5A78001022EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarkdownKit;
+			productName = MarkdownKit;
+			productReference = 704425EE187F5A78001022EF /* MarkdownKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70442602187F5A79001022EF /* MarkdownKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70442615187F5A7A001022EF /* Build configuration list for PBXNativeTarget "MarkdownKitTests" */;
+			buildPhases = (
+				704425FF187F5A79001022EF /* Sources */,
+				70442600187F5A79001022EF /* Frameworks */,
+				70442601187F5A79001022EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70442608187F5A7A001022EF /* PBXTargetDependency */,
+			);
+			name = MarkdownKitTests;
+			productName = MarkdownKitTests;
+			productReference = 70442603187F5A79001022EF /* MarkdownKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7044261B187F5A91001022EF /* libMarkdownKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70442639187F5A92001022EF /* Build configuration list for PBXNativeTarget "libMarkdownKit" */;
+			buildPhases = (
+				70442618187F5A91001022EF /* Sources */,
+				70442619187F5A91001022EF /* Frameworks */,
+				7044261A187F5A91001022EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libMarkdownKit;
+			productName = libMarkdownKit;
+			productReference = 7044261C187F5A91001022EF /* liblibMarkdownKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		70442628187F5A92001022EF /* libMarkdownKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7044263C187F5A92001022EF /* Build configuration list for PBXNativeTarget "libMarkdownKitTests" */;
+			buildPhases = (
+				70442625187F5A92001022EF /* Sources */,
+				70442626187F5A92001022EF /* Frameworks */,
+				70442627187F5A92001022EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7044262F187F5A92001022EF /* PBXTargetDependency */,
+			);
+			name = libMarkdownKitTests;
+			productName = libMarkdownKitTests;
+			productReference = 70442629187F5A92001022EF /* libMarkdownKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		707C801911BAD3EF00E8A12E /* TestSuite */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 707C801E11BAD3F000E8A12E /* Build configuration list for PBXNativeTarget "TestSuite" */;
@@ -342,44 +693,69 @@
 			productReference = 707C808C11BAD77100E8A12E /* MarkdownTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D2AAC07D0554694100DB518D /* MarkdownKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MarkdownKit" */;
-			buildPhases = (
-				D2AAC07A0554694100DB518D /* Headers */,
-				D2AAC07B0554694100DB518D /* Sources */,
-				D2AAC07C0554694100DB518D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MarkdownKit;
-			productName = MarkdownKit;
-			productReference = D2AAC07E0554694100DB518D /* libMarkdownKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				TargetAttributes = {
+					70442602187F5A79001022EF = {
+						TestTargetID = 707C808B11BAD77100E8A12E;
+					};
+					70442628187F5A92001022EF = {
+						TestTargetID = 707C808B11BAD77100E8A12E;
+					};
+				};
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MarkdownKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* MarkdownKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* MarkdownKit */,
 				707C801911BAD3EF00E8A12E /* TestSuite */,
 				707C808B11BAD77100E8A12E /* MarkdownTest */,
+				704425ED187F5A78001022EF /* MarkdownKit */,
+				70442602187F5A79001022EF /* MarkdownKitTests */,
+				7044261B187F5A91001022EF /* libMarkdownKit */,
+				70442628187F5A92001022EF /* libMarkdownKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		704425EC187F5A78001022EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704425FA187F5A79001022EF /* InfoPlist.strings in Resources */,
+				704426AD187F90D8001022EF /* blocktags in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442601187F5A79001022EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7044260F187F5A7A001022EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442627187F5A92001022EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442636187F5A92001022EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		707C801511BAD3EF00E8A12E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,6 +820,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7044269C187F839A001022EF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd discount\n./configure.sh\nmake blocktags\n";
+		};
 		707C801811BAD3EF00E8A12E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,12 +849,85 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		704425E9187F5A78001022EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442684187F721B001022EF /* css.c in Sources */,
+				7044267A187F71D5001022EF /* xmlpage.c in Sources */,
+				7044268F187F7272001022EF /* github_flavoured.c in Sources */,
+				7044268D187F7268001022EF /* generate.c in Sources */,
+				70442691187F7279001022EF /* html5.c in Sources */,
+				7044268B187F725B001022EF /* flags.c in Sources */,
+				7044266C187F71D5001022EF /* pgm_options.c in Sources */,
+				70442668187F71D5001022EF /* mkdio.c in Sources */,
+				704426AA187F83DD001022EF /* version.c in Sources */,
+				70442689187F7255001022EF /* emmatch.c in Sources */,
+				70442671187F71D5001022EF /* setup.c in Sources */,
+				7044269A187F7EBF001022EF /* MDKTextInput.m in Sources */,
+				70442678187F71D5001022EF /* xml.c in Sources */,
+				70442676187F71D5001022EF /* toc.c in Sources */,
+				70442681187F7210001022EF /* Csio.c in Sources */,
+				70442686187F7249001022EF /* docheader.c in Sources */,
+				70442673187F71D5001022EF /* tags.c in Sources */,
+				7044266F187F71D5001022EF /* resource.c in Sources */,
+				7044267F187F71FF001022EF /* basename.c in Sources */,
+				7044267C187F71E2001022EF /* amalloc.c in Sources */,
+				704426A4187F83DD001022EF /* markdown.c in Sources */,
+				70442687187F724F001022EF /* dumptree.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		704425FF187F5A79001022EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442611187F5A7A001022EF /* MarkdownKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442618187F5A91001022EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442683187F721A001022EF /* css.c in Sources */,
+				7044267B187F71D5001022EF /* xmlpage.c in Sources */,
+				70442690187F7272001022EF /* github_flavoured.c in Sources */,
+				7044268E187F7269001022EF /* generate.c in Sources */,
+				70442692187F727A001022EF /* html5.c in Sources */,
+				7044268C187F725C001022EF /* flags.c in Sources */,
+				7044266D187F71D5001022EF /* pgm_options.c in Sources */,
+				70442669187F71D5001022EF /* mkdio.c in Sources */,
+				704426AB187F83DD001022EF /* version.c in Sources */,
+				7044268A187F7256001022EF /* emmatch.c in Sources */,
+				70442672187F71D5001022EF /* setup.c in Sources */,
+				7044269B187F7EBF001022EF /* MDKTextInput.m in Sources */,
+				70442679187F71D5001022EF /* xml.c in Sources */,
+				70442624187F5A91001022EF /* libMarkdownKit.m in Sources */,
+				70442677187F71D5001022EF /* toc.c in Sources */,
+				70442682187F7211001022EF /* Csio.c in Sources */,
+				70442685187F7248001022EF /* docheader.c in Sources */,
+				70442674187F71D5001022EF /* tags.c in Sources */,
+				70442670187F71D5001022EF /* resource.c in Sources */,
+				70442680187F7201001022EF /* basename.c in Sources */,
+				7044267D187F71E4001022EF /* amalloc.c in Sources */,
+				704426A5187F83DD001022EF /* markdown.c in Sources */,
+				70442688187F7250001022EF /* dumptree.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70442625187F5A92001022EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70442638187F5A92001022EF /* libMarkdownKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		707C801611BAD3EF00E8A12E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				707C810911BADD0600E8A12E /* MDKStringConverter.m in Sources */,
-				707C813A11BADD0A00E8A12E /* RegexKitLite.m in Sources */,
 				707C808711BAD71A00E8A12E /* MarkdownTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,22 +936,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				707C809311BAD81600E8A12E /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2AAC07B0554694100DB518D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				708E9A9611A0B9DC00CEBC52 /* MDKStringConverter.m in Sources */,
-				70D28F7511B08EC800842B6F /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70442608187F5A7A001022EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 704425ED187F5A78001022EF /* MarkdownKit */;
+			targetProxy = 70442607187F5A7A001022EF /* PBXContainerItemProxy */;
+		};
+		7044262F187F5A92001022EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7044261B187F5A91001022EF /* libMarkdownKit */;
+			targetProxy = 7044262E187F5A92001022EF /* PBXContainerItemProxy */;
+		};
 		707C809D11BAD87E00E8A12E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 707C801911BAD3EF00E8A12E /* TestSuite */;
@@ -497,40 +959,34 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		704425F8187F5A79001022EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				704425F9187F5A79001022EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7044260D187F5A7A001022EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7044260E187F5A7A001022EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		70442634187F5A92001022EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70442635187F5A92001022EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		1DEB921F08733DC00010E9CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/MarkdownKit.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MarkdownKit_Prefix.pch;
-				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = MarkdownKit;
-			};
-			name = Debug;
-		};
-		1DEB922008733DC00010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				DSTROOT = /tmp/MarkdownKit.dst;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MarkdownKit_Prefix.pch;
-				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = MarkdownKit;
-			};
-			name = Release;
-		};
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,6 +1011,358 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
+			};
+			name = Release;
+		};
+		70442613187F5A7A001022EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarkdownKit/MarkdownKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "MarkdownKit/MarkdownKit-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		70442614187F5A7A001022EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarkdownKit/MarkdownKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "MarkdownKit/MarkdownKit-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		70442616187F5A7A001022EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarkdownTest.app/MarkdownTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarkdownKit/MarkdownKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "MarkdownKitTests/MarkdownKitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		70442617187F5A7A001022EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarkdownTest.app/MarkdownTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarkdownKit/MarkdownKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "MarkdownKitTests/MarkdownKitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		7044263A187F5A92001022EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/libMarkdownKit.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libMarkdownKit/libMarkdownKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7044263B187F5A92001022EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/libMarkdownKit.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libMarkdownKit/libMarkdownKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7044263D187F5A92001022EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarkdownTest.app/MarkdownTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libMarkdownKit/libMarkdownKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "libMarkdownKitTests/libMarkdownKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7044263E187F5A92001022EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarkdownTest.app/MarkdownTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libMarkdownKit/libMarkdownKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "libMarkdownKitTests/libMarkdownKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -670,15 +1478,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MarkdownKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1DEB921F08733DC00010E9CD /* Debug */,
-				1DEB922008733DC00010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MarkdownKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -687,6 +1486,38 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		70442612187F5A7A001022EF /* Build configuration list for PBXNativeTarget "MarkdownKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70442613187F5A7A001022EF /* Debug */,
+				70442614187F5A7A001022EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70442615187F5A7A001022EF /* Build configuration list for PBXNativeTarget "MarkdownKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70442616187F5A7A001022EF /* Debug */,
+				70442617187F5A7A001022EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70442639187F5A92001022EF /* Build configuration list for PBXNativeTarget "libMarkdownKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7044263A187F5A92001022EF /* Debug */,
+				7044263B187F5A92001022EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7044263C187F5A92001022EF /* Build configuration list for PBXNativeTarget "libMarkdownKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7044263D187F5A92001022EF /* Debug */,
+				7044263E187F5A92001022EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		707C801E11BAD3F000E8A12E /* Build configuration list for PBXNativeTarget "TestSuite" */ = {
 			isa = XCConfigurationList;
